@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 25, 2022 at 02:04 PM
+-- Generation Time: Feb 28, 2022 at 03:46 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.3.33
 
@@ -632,7 +632,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (33, '2022_02_11_140758_create_public_messages_table', 26),
 (34, '2022_02_13_065342_create_school_events_table', 27),
 (35, '2022_02_13_180340_create_school_notices_table', 28),
-(36, '2022_02_23_140222_create_exam_schedules_table', 29);
+(36, '2022_02_23_140222_create_exam_schedules_table', 29),
+(37, '2022_02_26_011227_create_slider_images_table', 30),
+(38, '2022_02_28_013019_create_principal_messages_table', 31);
 
 -- --------------------------------------------------------
 
@@ -663,6 +665,27 @@ CREATE TABLE `personal_access_tokens` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `principal_messages`
+--
+
+CREATE TABLE `principal_messages` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `photo` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `principal_messages`
+--
+
+INSERT INTO `principal_messages` (`id`, `photo`, `message`, `created_at`, `updated_at`) VALUES
+(4, 'principal.jpg', 'I take the privilege to welcome all of you to the official website of Adamjee Cantonment College which is meticulously designed to offer you vivid glimpses of the history, tradition, achievements and ongoing activities of the college. The combination of long-cherished heritage and enviable academic excellence has created a unique brand value for the institution, making it one of the top ranking colleges of the country.\r\n\r\nFounded in 1960, Adamjee Cantonment College is pledge-bound to create worthy citizens for the nation. The institution was established following the ideology and curricular activities of original renowned public school of England—Eton and Harrow. The motto of this college is to inculcate in the students the synthesis of education, discipline and morality. Adamjee Cantonment College is always keen to incorporate advanced technology in traditional educational system and has brought revolutionary changes in the education management of the college through installing multi-media classrooms, website, digital messaging system, digital result system etc that have made the institution a truly digitalized college and will go a long way in making our students the capable  citizens of the 21 Century’s world. Our dedicated and potential teaching staff are equipped enough to make the students well-prepared for the challenges of the ever-changing world.', '2022-02-27 20:03:05', '2022-02-27 20:03:05');
 
 -- --------------------------------------------------------
 
@@ -709,15 +732,20 @@ CREATE TABLE `school_details` (
   `school_phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `school_email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `school_address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `map_coordinate` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `school_est` date NOT NULL,
   `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image_cover` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image_cover` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `about_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `about_description` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `school_youtube` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `school_twitter` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `school_instagram` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `school_facebook` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `video_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `video_description` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `video_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mission` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -726,8 +754,8 @@ CREATE TABLE `school_details` (
 -- Dumping data for table `school_details`
 --
 
-INSERT INTO `school_details` (`id`, `school_name`, `school_phone`, `school_email`, `school_address`, `school_est`, `image`, `image_cover`, `about_title`, `about_description`, `school_youtube`, `school_twitter`, `school_instagram`, `school_facebook`, `created_at`, `updated_at`) VALUES
-(64, 'Test School', '01750089881', 'mail@nub.ac.bd', 'Banani, Dhaka, Bangladesh', '2000-01-15', 'school_logo.jpg', 'school_cover.jpg', 'Why we are better', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).', 'https://www.youtube.com', 'https://www.twitter.com', 'https://www.instagram.com', 'https://www.facebook.com', '2022-02-14 13:37:17', '2022-02-14 13:37:17');
+INSERT INTO `school_details` (`id`, `school_name`, `school_phone`, `school_email`, `school_address`, `map_coordinate`, `school_est`, `image`, `image_cover`, `about_title`, `about_description`, `school_youtube`, `school_twitter`, `school_instagram`, `school_facebook`, `video_title`, `video_description`, `video_url`, `mission`, `created_at`, `updated_at`) VALUES
+(70, 'Test School', '01750089881', 'mail@nub.ac.bd', 'Banani, Dhaka, Bangladesh', '23.7934896,90.4015967', '2000-01-15', 'school_logo.jpg', NULL, 'Why we are better', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).', 'https://www.youtube.com', 'https://www.twitter.com', 'https://www.instagram.com', 'https://www.facebook.com', 'Learn More About Us From Video', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).', '6sa1G_9jCb0', 'Our vision and mission is very simple:\r\n\r\n“ Come here to seek knowledge and Go back to serve the country”\r\n\r\nWe impart quality education according to the prescribed syllabus of Education Board, Dhaka and National University, Bangladesh. We revolutionized our classroom practice through the introduction of Multimedia Central Classes which integrate the traditional syllabus with the outside tech world .Our vision is to inculcate the sense of discipline, morality , tradition and patriotism and modern world by providing quality education. Traditional and technological opportunities are provided to express and develop our students with a view to making them 21st century ideal citizens of the entire world .\r\n\r\nRich traditional heritage encapsulated with the opportunity of technology made our students aware about a changing world outside and led them to understand about the 21st century environment and world’s demand.', '2022-02-27 18:56:52', '2022-02-27 18:56:52');
 
 -- --------------------------------------------------------
 
@@ -853,8 +881,34 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('IdjFHbmD6Bbgnu7PbLWvRijgZpEMJVPTBP0aB7sn', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiMFNhSkcwR0VIOFZIQkl6eGhWeFBZdVFhRjBpaGQ1dDBWd1ZocWdBVSI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjQ3OiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYWNjb3VudHMvc3R1ZGVudC9mZWUvdmlldyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRQd3E2dE9IR0lRU2h1OXFkU0FVZVh1LjlqeGp6ZWRCb0N4c3F3azkvTWFwenF0VFJGZU5nTyI7fQ==', 1645792937),
-('qDkPxTaqNsMo1mLwLgSoCmGdbQKwdGDM04T0lbeb', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiODVYRVZ1TGpJd0tlSzRCekg4ZVF2Z2tmdnBTeWdXdWp1WkJzOUgxMCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hY2NvdW50cy9zdHVkZW50L2ZlZS9hZGQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTAkUHdxNnRPSEdJUVNodTlxZFNBVWVYdS45anhqemVkQm9DeHNxd2s5L01hcHpxdFRSRmVOZ08iO3M6MjE6InBhc3N3b3JkX2hhc2hfc2FuY3R1bSI7czo2MDoiJDJ5JDEwJFB3cTZ0T0hHSVFTaHU5cWRTQVVlWHUuOWp4anplZEJvQ3hzcXdrOS9NYXB6cXRUUkZlTmdPIjt9', 1645777193);
+('BoBKVk8wfmp2fYDcCy4jSB0wygLe7Gr9agphOTVF', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoieVV1OGl4YUpsbnk3OGRsNXhMN2liVTRYcllnTkFETThtN2k5cFhKcSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1646052446),
+('MrCavT0Jk2AKZw1FqkBwVOr4DC9ir8nepB2TuOj0', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiSEh1a0FFSkR2ZXNxcWtnejhtRThUQngxU3lRTUVHdmhWaDA5VTNxQSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MzoidXJsIjthOjA6e31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTAkUHdxNnRPSEdJUVNodTlxZFNBVWVYdS45anhqemVkQm9DeHNxd2s5L01hcHpxdFRSRmVOZ08iO30=', 1645992611);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `slider_images`
+--
+
+CREATE TABLE `slider_images` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `serial` int(10) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `slider_images`
+--
+
+INSERT INTO `slider_images` (`id`, `name`, `serial`, `created_at`, `updated_at`) VALUES
+(9, 'slider_image2.jpg', 2, '2022-02-26 18:23:04', '2022-02-26 18:23:04'),
+(13, 'slider_image6.jpg', 6, '2022-02-26 18:23:04', '2022-02-26 18:23:04'),
+(16, 'slider_image1.png', 1, '2022-02-26 18:27:57', '2022-02-26 18:27:57'),
+(17, 'slider_image4.jpg', 4, '2022-02-26 18:27:57', '2022-02-26 18:27:57'),
+(18, 'slider_image3.jpg', 3, '2022-02-26 18:55:00', '2022-02-26 18:55:00'),
+(19, 'slider_image5.jpg', 5, '2022-02-26 18:55:40', '2022-02-26 18:55:40');
 
 -- --------------------------------------------------------
 
@@ -1072,7 +1126,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `usertype`, `name`, `email`, `email_verified_at`, `password`, `mobile`, `address`, `gender`, `image`, `fname`, `mname`, `religion`, `id_no`, `dob`, `code`, `role`, `join_date`, `designation_id`, `salary`, `status`, `remember_token`, `current_team_id`, `profile_photo_path`, `theme`, `edu_qualification`, `edu_institute`, `facebook_link`, `instagram_link`, `twitter_link`, `total_monthly_fee_paid`, `total_registration_fee_paid`, `total_exam_fee_paid`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'Admin', 'admin@gmail.com', NULL, '$2y$10$Pwq6tOHGIQShu9qdSAUeXu.9jxjzedBoCxsqwk9/MapzqtTRFeNgO', '01750089881', 'Dhaka Bangladesh', 'Male', '20211212125620200211_165927.jpg', 'MD REZAUL KARIM', 'MST KOMOLA BEGUM', 'ISLAM', NULL, '1996-01-01', NULL, 'Admin', NULL, NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-02-21 13:32:36'),
+(1, 'Admin', 'Admin', 'admin@gmail.com', NULL, '$2y$10$Pwq6tOHGIQShu9qdSAUeXu.9jxjzedBoCxsqwk9/MapzqtTRFeNgO', '01750089881', 'Dhaka Bangladesh', 'Male', '20211212125620200211_165927.jpg', 'MD REZAUL KARIM', 'MST KOMOLA BEGUM', 'ISLAM', NULL, '1996-01-01', NULL, 'Admin', NULL, NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-02-25 15:43:54'),
 (8, 'Student', 'MD SHAKIB KHAN', NULL, NULL, '$2y$10$3PEglp3gHZcOaDrGk1L1nOM9xgbTvYLto4.47uUjMRvvv55lXc.DC', '01750089881', 'Dhaka, Bangladesh', 'Male', '202112091528jordan-mcgee-moqWSeBjLIc-unsplash.jpg', 'MD AMIR KHAN', 'KRISTEN STWART', 'Islam', '20180001', '1996-01-01', '5165', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-09 09:28:42', '2021-12-09 09:28:42'),
 (9, 'Student', 'Keanu Reeves', NULL, NULL, '$2y$10$X6TBTEXyW8tpNzYRpEN4yO5e.406oy.nedISyuVykSfczY8ekw9MG', '01750089881', 'West Kazipara, Mirpur, Dhaka', 'Male', '202112101353reeves.jpg', 'Samuel Nowlin Reeves', 'Patrica Taylor', 'Christan', '20200009', '1964-09-02', '9387', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-10 07:53:25', '2021-12-10 07:53:25'),
 (10, 'Student', 'Leonardo DiCaprio', NULL, NULL, '$2y$10$OhH0tEMiGOrb.Z2/7NJ8KewCMqfxRtDSQAHWpDmKO93/srd5B8Tlu', '01750089881', 'West Shewrapara, Mirpur, Dhaka', 'Male', '202112101355American-actor-Leonardo-DiCaprio-2016.jpg', 'George DiCaprio', 'Irmelin Indenbirken', 'Christan', '20200010', '1974-11-09', '3327', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-10 07:55:14', '2021-12-10 07:55:14'),
@@ -1236,6 +1290,12 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
+-- Indexes for table `principal_messages`
+--
+ALTER TABLE `principal_messages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `public_messages`
 --
 ALTER TABLE `public_messages`
@@ -1273,6 +1333,12 @@ ALTER TABLE `sessions`
   ADD PRIMARY KEY (`id`),
   ADD KEY `sessions_user_id_index` (`user_id`),
   ADD KEY `sessions_last_activity_index` (`last_activity`);
+
+--
+-- Indexes for table `slider_images`
+--
+ALTER TABLE `slider_images`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `student_attendances`
@@ -1436,13 +1502,19 @@ ALTER TABLE `marks_grades`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `principal_messages`
+--
+ALTER TABLE `principal_messages`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `public_messages`
@@ -1454,7 +1526,7 @@ ALTER TABLE `public_messages`
 -- AUTO_INCREMENT for table `school_details`
 --
 ALTER TABLE `school_details`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT for table `school_events`
@@ -1473,6 +1545,12 @@ ALTER TABLE `school_notices`
 --
 ALTER TABLE `school_subjects`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
+-- AUTO_INCREMENT for table `slider_images`
+--
+ALTER TABLE `slider_images`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `student_attendances`
