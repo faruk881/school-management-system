@@ -41,6 +41,7 @@ use App\Http\Controllers\Backend\site\SiteManagementController;
 use App\Http\Controllers\Backend\Student\ExamScheduleController;
 use App\Http\Controllers\ThemeSwitchController;
 use App\Http\Controllers\PublicMessageController;
+use App\Http\Controllers\Backend\Account\StudentFeeControllerViewStudentFee;
 
 /*
 |--------------------------------------------------------------------------
@@ -376,10 +377,10 @@ Route::group(['middleware' => 'auth'],function(){
     /// Account Management Routes  
     Route::prefix('accounts')->group(function(){
         Route::get('student/fee/view', [StudentFeeController::class, 'StudentFeeView'])->name('student.fee.view'); //This route is for student fee history
-        Route::get('student/fee/view2', [StudentFeeController::class, 'StudentFeeView2'])->name('student.fee.view2'); //This route is for student fee view
+        Route::get('student/fee/view2', [StudentFeeControllerViewStudentFee::class, 'StudentFeeView'])->name('student.fee.view2'); //This route is for student fee view
         Route::get('student/fee/add', [StudentFeeController::class, 'StudentFeeAdd'])->name('student.fee.add');
         Route::get('student/fee/getstudent', [StudentFeeController::class, 'StudentFeeGetStudent'])->name('account.fee.getstudent'); 
-        Route::get('student/fee/view/getstudent', [StudentFeeController::class, 'StudentFeeViewGetStudent'])->name('account.fee.view.getstudent'); 
+        Route::get('student/fee/view/getstudent', [StudentFeeControllerViewStudentFee::class, 'StudentFeeViewGetStudent'])->name('account.fee.view.getstudent'); 
         Route::post('student/fee/store', [StudentFeeController::class, 'StudentFeeStore'])->name('account.fee.store'); 
         
         // Employee Salary Routes

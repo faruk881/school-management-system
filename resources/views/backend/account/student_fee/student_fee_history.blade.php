@@ -67,7 +67,9 @@
 											
 											
 											<!-- registration, monthly, exam due amount -->
-											@php											
+											@php	
+
+											//Monthly Due										
 											if ($value['fee_category']['id'] == 2) {
 
 												$discount = App\Models\AssignStudent::with(['discount'])->where('student_id',$value['student']['id'])->where('year_id',$value['student_year']['id'])->where('class_id',$value['student_class']['id'])->first();
@@ -76,8 +78,11 @@
 												// $date2 = strtotime('2022-03-01');
 												$date2 = strtotime(date('Y-m-d', time()));
 												$months = 1;
-												while (($regDate = strtotime('+1 MONTH', $regDate)) <= $date2)
-												$months++;
+												while (($regDate = strtotime('+1 MONTH', $regDate)) <= $date2){
+													$months++;
+												}
+
+
 												$total_monthly_fee_paid = $value['student']['total_monthly_fee_paid'];
 												
 												$monthly_fee = 
@@ -85,15 +90,16 @@
 												$discount = $discount->discount->discount;
 												$discountablefee = $discount/100*$orginalfee;
 												$finalfee = (int)$orginalfee-(int)$discountablefee; 
-												$monthly_due = (int)$finalfee-(int)$total_monthly_fee_paid;
+												
+												$monthly_due = ((int)$finalfee*(int)$months)-(int)$total_monthly_fee_paid;
 
 
 												echo '<td>'.$monthly_due.'</td>';
 												// echo '<td>'.$months.'</td>';
 												// echo '<td> '.strtotime($regDate).' </td>';						
-												//Please add Monthly total due
 											}
 
+											//Registration Due
 											if ($value['fee_category']['id'] == 1) {
 												// $registration_fee = App\Models\FeeCategoryAmount::get();
 												
@@ -101,9 +107,9 @@
 												$registration_fee = $fee->amount;
 												$registration_due = (int)$registration_fee-(int)$total_registration_fee_paid;
 												echo '<td>'.$registration_due.'</td>';
-												//Please add Total Registration Due
 											}
 
+											//Exam Due
 											if ($value['fee_category']['id'] == 3) {
 												
 												$examDate = App\Models\ExamSchedule::where('class_id',$value['student_class']['id'])->get();

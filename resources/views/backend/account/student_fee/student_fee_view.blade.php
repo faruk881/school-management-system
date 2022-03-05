@@ -67,17 +67,6 @@
 										</div>		 
 									</div>				
 								</div> <!-- End Col md 3 --> 
-
-
-
-								<div class="col-md-3">
-									<div class="form-group">
-										<h5> Date <span class="text-danger">*</span></h5>
-										<div class="controls">
-											<input type="date" name="date" id="date" class="form-control" > 
-										</div>
-									</div>
-								</div> <!-- End Col md 3 --> 
 								
 								<div class="col-md-3"  >
 									<a id="search" class="btn btn-primary" name="search"> Search</a>

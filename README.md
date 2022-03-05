@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 <h1>For Fresh PC</h1>
-<p>Download and install xampp</p>
+<p>Download and install xampp(Recommend php 7)</p>
 <p>Add php to path</p>
 <p>Download and install composer and nodejs</p>
 <p>Download project and extract it in htdocs folder </p>
