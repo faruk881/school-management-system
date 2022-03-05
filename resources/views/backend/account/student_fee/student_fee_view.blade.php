@@ -85,7 +85,7 @@
 							</div><!--  end row --> 
 						</div> <!-- End of box body -->
 
-							<!--  ////////////////// Mark Entry table /////////////  -->
+							<!--  ////////////////// View Student Fee /////////////  -->
 						<div class="box">
 							<div class="box-body">
 								<div class="row">
