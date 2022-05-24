@@ -7,8 +7,7 @@
 
 <aside class="main-sidebar">
     <!-- sidebar-->
-    <section class="sidebar">	
-		
+    <section class="sidebar">		
         <div class="user-profile">
 			<div class="ulogo">
 				 <a href="{{ route('dashboard') }}">
@@ -16,9 +15,12 @@
 					 <div class="d-flex align-items-center justify-content-center">					 	
 						  <img src="backend/images/logo-dark.png" alt="">
               @if(Auth::user()->usertype == 'Admin')
-						  <h3><b>School</b> Admin Panel</h3>
+						  {{-- <h3><b>School</b> Admin Panel</h3> --}}
               
+
+
               @endif
+              <h3>{{ auth()->user()->userRole->name }}</h3>
               @if(Auth::user()->usertype == 'employee')
 						  <h3><b>School</b> Teacher Panel</h3>
               
@@ -30,15 +32,42 @@
       
       <!-- sidebar menu-->
       <ul class="sidebar-menu" data-widget="tree">  
-		  
-		<li class="{{ ($route == 'dashboard')?'active':'' }}">
+		    <li class="{{ ($route == 'dashboard')?'active':'' }}">
           <a href="{{ route('dashboard') }}">
             <i data-feather="pie-chart"></i>
-			<span>Dashboard</span>
+			       <span>Dashboard</span>
           </a>
         </li>  
         
-        @if(Auth::user()->role == 'Admin')
+        @isset($menus)
+          @foreach($menus as $menu)
+            <li class="treeview {{ ($route == $menu->route)?'active':'' }}">
+              <a href="{{ !empty($menu->route) ? $menu->route : "#"}}">
+                <i data-feather="message-circle"></i>
+                <span>{{ $menu->name ?? "" }}</span>
+                @if(!empty($menu->childs))
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-right pull-right"></i>
+                </span>
+                @endif
+              </a>
+
+              @if(!empty($menu->childs))
+                <ul class="treeview-menu">
+
+                  @foreach($menu->childs as $child)
+                    <li class="{{ ($route == $child->route)?'active':'' }}"><a href="{{ !empty($child->route) ? route($child->route) : "#" }}"><i class="ti-more"></i>{{ $child->name }}</a></li>
+                  @endforeach                  
+                </ul>
+              @endif
+            </li> 
+          @endforeach
+        @endisset
+
+
+
+
+        {{-- @if(Auth::user()->role == 'Admin')
         <li class="treeview {{ ($prefix == '/users')?'active':'' }}">
           <a href="#">
             <i data-feather="message-circle"></i>
@@ -52,7 +81,7 @@
             <li class="{{ ($route == 'users.add')?'active':'' }}"><a href="{{ route('users.add') }}"><i class="ti-more"></i>Add User</a></li>
           </ul>
         </li> 
-        @endif
+        @endif --}}
 		  
         <li class="treeview {{ ($prefix == '/profiles')?'active':'' }}">
           <a href="#">
@@ -224,8 +253,7 @@
           <ul class="treeview-menu">
             <li class="{{ ($route == 'monthly.profit.view')?'active':'' }}"><a href="{{ route('monthly.profit.view') }}"><i class="ti-more"></i>Monthly-Yearly Profite</a></li>         
             <li class="{{ ($route == 'marksheet.generate.view')?'active':'' }}"><a href="{{ route('marksheet.generate.view') }}"><i class="ti-more"></i>MarkSheet Generate</a></li>         
-            <li class="{{ ($route == 'attendance.report.view')?'active':'' }}"><a href="{{ route('attendance.report.view') }}"><i class="ti-more"></i>Employee Attendance Report</a></li>         
-            {{-- <li class="{{ ($route == 'student.idcard.view')?'active':'' }}"><a href="{{ route('student.idcard.view') }}"><i class="ti-more"></i>Student ID Card</a></li>          --}}
+            <li class="{{ ($route == 'attendance.report.view')?'active':'' }}"><a href="{{ route('attendance.report.view') }}"><i class="ti-more"></i>Employee Attendance Report</a></li>
           </ul>
         </li>
         @endif
@@ -236,7 +264,5 @@
       </ul>
     </section>
 	
-	<div class="sidebar-footer">
-		
-	</div>
+	 <div class="sidebar-footer"> </div>
   </aside>

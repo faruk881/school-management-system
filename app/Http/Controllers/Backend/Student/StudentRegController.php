@@ -12,6 +12,7 @@ use App\Models\StudentYear;
 use App\Models\StudentClass;
 use App\Models\StudentGroup;
 use App\Models\StudentShift;
+use App\Models\Role;
 use DB;
 use PDF;
 
@@ -62,7 +63,8 @@ class StudentRegController extends Controller
     }
 
 
-    public function StudentRegStore(Request $request){
+    public function StudentRegStore(Request $request)
+    {
     	DB::transaction(function() use($request){
     	$checkYear = StudentYear::find($request->year_id)->name;
     	$student = User::where('usertype','Student')->orderBy('id','DESC')->first();
@@ -94,6 +96,8 @@ class StudentRegController extends Controller
     	$user = new User();
     	$code = rand(0000,9999);
     	$user->id_no = $final_id_no;
+        $user->role_id = optional(Role::where('slug', 'student')
+                        ->first())->id ?? 0;
     	$user->password = bcrypt($code);
     	$user->usertype = 'Student';
     	$user->code = $code;

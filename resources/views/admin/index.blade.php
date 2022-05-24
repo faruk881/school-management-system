@@ -211,8 +211,8 @@
                         {{ date('d-M-y',strtotime($notice['notice_date'])) }}
                     </td>
                     <td>{{ $notice['notice_description'] }}</td>
-                    <td>{{ $notice['created_by']['name'] }}</td>
-                    <td>{{ $notice['updated_by']['name'] }}</td>
+                    <td>{{ $notice['created_by']['name'] ?? "" }}</td>
+                    <td>{{ $notice['updated_by']['name'] ?? ""}}</td>
                     {{-- <td>{{ $eventDetails[0]['created_by'] }}</td>				  --}}
                      
                 </tr>
