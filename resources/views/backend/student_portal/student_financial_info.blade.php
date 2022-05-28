@@ -4,6 +4,7 @@
 	<div class="container-full">		 
 		<!-- Main content -->
 		<section class="content">
+			
 			<div class="row">
 				<div class="col-12">
 					<div class="box">
@@ -11,8 +12,32 @@
 							<h3 class="box-title">Student Fee List </h3>
 							{{-- <a href="{{ route('student.fee.add') }}" style="float: right;" class="btn btn-rounded btn-success mb-5"> Add / Edit Student Fee</a>			   --}}
 						</div>
+					
 						<!-- /.box-header -->
 						<div class="box-body">
+							<!-- info row -->
+							<div class="row invoice-info">
+								<div class="col-md-6 invoice-col">
+									<address>
+										<strong class="text-blue font-size-24">{{ Auth::user()->name }}</strong><br>
+										<strong class="d-inline">ID: </strong>{{ Auth::user()->id_no }}<br>
+										<strong class="d-inline">Your Discount: </strong>{{ $discount }}%<br>
+									</address>
+								</div>
+							
+
+								<div class="col-md-6 invoice-col text-right">
+									<address>
+										<strong class="d-inline">Registration fee in taka:</strong> {{ $reg_fee }}<br>
+										<strong class="d-inline">Exam fee in taka:</strong> {{ $exam_fee }}<br>
+										<strong class="d-inline">Monthly fee in taka:</strong> {{ $monthly_fee }}<br>
+										<strong class="d-inline">Monthly fee with discount in taka:</strong> {{ $discounted_monthly_fee }}<br>
+										<strong class="d-inline">Total Monthly fee with discount in taka:</strong> {{ $total_monthly_fee }}
+										{{-- <strong class="d-inline">Fuckin months:</strong> {{ $months }} --}}
+									</address>
+								</div>
+							</div>
+			
 							<div class="table-responsive">
 								<table id="example1" class="table table-bordered table-striped">
 									<thead>
@@ -55,13 +80,14 @@
 					{{-- <p class="lead"><b>Payment Due</b><span class="text-danger"> 14/08/2018 </span></p> --}}
 
 					<div>
-						<p><strong> Registragion Fee Paid:</strong> {{ $reg_fee_paid }} | <strong>Due:</strong> </p>
-						<p><strong>Total Monthly Fee Paid:</strong> {{ $monthly_fee_paid }} | <strong>Due:</strong></p>
-						<p><strong>Total Exam Fee Paid:</strong> {{ $exam_fee_paid }} | <strong>Due:</strong> </p>
+						<p><strong> Registragion Fee Paid:</strong> {{ 0 + $reg_fee_paid }} | <strong>Due: </strong>{{ 0 + $reg_fee_due }} </p>
+						<p><strong>Total Monthly Fee Paid:</strong> {{ 0 + $monthly_fee_paid }} | <strong>Due: </strong>{{ 0 + $monthly_fee_due }}</p>
+						<p><strong>Total Exam Fee Paid:</strong> {{ 0 + $exam_fee_paid }} | <strong>Due: </strong>{{ 0 + $exam_fee_due }} </p>
 					</div>
 					<div class="total-payment">
-						<h3><b>Total Paid :</b> {{ $total_paid }}</h3><br>
-						<h3><b>Total Due :</b> {{ $discount }}</h3>
+						<h3><b>Total Paid :</b> {{ $total_paid }} | <b>Total due: </b>{{ $total_due }}</h3>
+						{{-- <h3><b>Total Due :</b> {{ $discount }}</h3>
+						<h3><b>Total Due :</b> {{ $class }}</h3> --}}
 					</div>
 
 				</div> <!-- /.col -->
