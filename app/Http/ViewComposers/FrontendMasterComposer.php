@@ -96,6 +96,12 @@ class FrontendMasterComposer
 
         $pm = PrincipalMessage::all();
         $view->with('principle_msg',$pm);
+
+        if(Auth::check()) {
+            $xstudent = AssignStudent::with('student_class')->with('student_year')->with('group')->with('shift')->where('student_id',Auth::user()->id)->get();
+            // $xstudent = AssignStudent::where('student_id',Auth::user()->id)->get();
+            $view->with('xstudent',$xstudent);
+        }
         
 
 

@@ -92,12 +92,14 @@ class StudentRegController extends Controller
 
     	$final_id_no = $checkYear.$id_no;
     	$user = new User();
-    	$code = rand(0000,9999);
+    	// $code = rand(0000,9999);
+    	$code = 1234;
     	$user->id_no = $final_id_no;
     	$user->password = bcrypt($code);
     	$user->usertype = 'Student';
     	$user->code = $code;
     	$user->name = $request->name;
+		$user->email = $request->email;
     	$user->fname = $request->fname;
     	$user->mname = $request->mname;
     	$user->mobile = $request->mobile;
@@ -164,6 +166,7 @@ class StudentRegController extends Controller
     	 
     	$user = User::where('id',$student_id)->first();    	 
     	$user->name = $request->name;
+		$user->email = $request->email;
     	$user->fname = $request->fname;
     	$user->mname = $request->mname;
     	$user->mobile = $request->mobile;

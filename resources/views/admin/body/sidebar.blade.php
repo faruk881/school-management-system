@@ -1,18 +1,16 @@
 @php
   $prefix = Request::route()->getprefix();
   $route = Route::current()->getName();
-
 @endphp
 
 
 <aside class="main-sidebar">
-    <!-- sidebar-->
-    <section class="sidebar">	
-		
-        <div class="user-profile">
-			<div class="ulogo">
-				 <a href="{{ route('dashboard') }}">
-				  <!-- logo for regular state and mobile devices -->
+  <!-- sidebar-->
+  <section class="sidebar">	
+    <div class="user-profile">
+      <div class="ulogo">
+        <a href="{{ route('dashboard') }}">
+			<!-- logo for regular state and mobile devices -->
 					 <div class="d-flex align-items-center justify-content-center">					 	
 						  <img src="backend/images/logo-dark.png" alt="">
               @if(Auth::user()->usertype == 'Admin')
@@ -62,7 +60,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
+
+            @if (Auth::user()->usertype != 'Student')
             <li class="{{ ($route == 'profile.view')?'active':'' }}"><a href="{{ route('profile.view') }}"><i class="ti-more"></i>Your Profile</a></li>
+              
+            @endif
             <li class="{{ ($route == 'password.view')?'active':'' }}"><a href="{{ route('password.view') }}"><i class="ti-more"></i>Change Password</a></li>
           </ul>
         </li>
@@ -93,6 +95,7 @@
           @endif
 
 
+        @if(Auth::user()->usertype != 'Student')
         <li class="treeview {{ ($prefix == '/students')?'active':'' }}">
           <a href="#">
             <i data-feather="user"></i> <span>Student Management</span>
@@ -100,6 +103,8 @@
               <i class="fa fa-angle-right pull-right"></i>
             </span>
           </a>
+        @endif
+
           <ul class="treeview-menu">
             @if(Auth::user()->usertype == 'employee')
               <li class="{{ ($route == 'student.attendance.view')?'active':'' }}"><a href="{{ route('student.attendance.view') }}"><i class="ti-more"></i>Student Attendance</a></li>
@@ -190,7 +195,7 @@
         </li>
         @endif
        
-
+        @if (Auth::user()->usertype != 'Student')
         <li class="treeview {{ ($prefix == '/site')?'active':'' }}">
           <a href="#">
             <i data-feather="link"></i> <span>Site Management</span>
@@ -208,6 +213,7 @@
             
           </ul>
         </li>
+        @endif
 		
         		  
         @if(Auth::user()->usertype == 'Admin')
@@ -229,6 +235,25 @@
           </ul>
         </li>
         @endif
+
+        
+		  
+        @if (Auth::user()->usertype == 'Student')
+        <li class="treeview {{ ($prefix == '/reports')?'active':'' }}">
+          <a href="#">
+            <i data-feather="layers"></i> <span>Academic</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="{{ ($route == 'student.financial.info')?'active':'' }}"><a href="{{ route('student.financial.info') }}"><i class="ti-more"></i>Financial Information</a></li>         
+            {{-- <li class="{{ ($route == 'marksheet.generate.view')?'active':'' }}"><a href="{{ route('marksheet.generate.view') }}"><i class="ti-more"></i>MarkSheet Generate</a></li>          --}}
+          </ul>
+        </li>
+        @endif
+
+        
 
         
 		

@@ -42,6 +42,7 @@ use App\Http\Controllers\Backend\Student\ExamScheduleController;
 use App\Http\Controllers\ThemeSwitchController;
 use App\Http\Controllers\PublicMessageController;
 use App\Http\Controllers\Backend\Account\StudentFeeControllerViewStudentFee;
+use App\Http\Controllers\Backend\Student\StudentFinancialInfo;
 
 /*
 |--------------------------------------------------------------------------
@@ -151,6 +152,12 @@ Route::group(['middleware' => 'auth'],function(){
         Route::get('/password/view', [ProfileController::class, 'PasswordView'])->name('password.view');
         Route::post('/password/update', [ProfileController::class, 'PasswordUpdate'])->name('password.update');
         
+    });
+
+    //Routes for Student Portal
+
+    Route::prefix('studentportal')->group(function() {
+        Route::get('financialinfo',[StudentFinancialInfo::class,'FinancialInfo'])->name('student.financial.info');
     });
 
     //Routes For Student class

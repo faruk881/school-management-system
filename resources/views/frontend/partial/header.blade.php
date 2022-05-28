@@ -76,6 +76,9 @@
 						<li>
 							<a href="{{ route('contact') }}">Contact Us</a>
 						</li>
+						<li>
+							<a href="{{ route('contact') }}">Student/Guardian Portal</a>
+						</li>
 					</ul>
 				</nav>
 			</div>

@@ -113,11 +113,19 @@
 	      <!-- User Account-->
           <li class="dropdown user user-menu">	
 			<a href="#" class="waves-effect waves-light rounded dropdown-toggle p-0" data-toggle="dropdown" title="User">
+				@if (Auth::user()->usertype == "Student")
+				<img src="{{ (!empty($user->image))? url('upload/student_images/'.$user->image): url('upload/no_image.jpg') }}" alt="">
+				@else
 				<img src="{{ (!empty($user->image))? url('upload/user_images/'.$user->image): url('upload/no_image.jpg') }}" alt="">
+				@endif
+				
 			</a>
 			<ul class="dropdown-menu animated flipInX">
 			  <li class="user-body">
-				 <a class="dropdown-item" href="{{ route('profile.view') }}"><i class="ti-user text-muted mr-2"></i> Profile</a>
+
+				@if (Auth::user()->usertype != 'Student')
+				<a class="dropdown-item" href="{{ route('profile.view') }}"><i class="ti-user text-muted mr-2"></i> Profile</a>	
+				@endif
 				 <a class="dropdown-item" href="{{ route('site') }}"><i class="ti-home text-muted mr-2"></i> Visit site</a>
 				 <div class="dropdown-divider"></div>
 				 <a class="dropdown-item" href="{{ route('admin.logout') }}"><i class="ti-lock text-muted mr-2"></i> Logout</a>

@@ -160,13 +160,24 @@
  			<div class="col-md-4">
 
  		 <div class="form-group">
-		<h5>Date of Birth <span class="text-danger">*</span></h5>
+		<h5>Join Date <span class="text-danger">*</span></h5>
 		<div class="controls">
 	 <input type="date" name="join_date" class="form-control" required="" value="{{ $editData['student']['join_date'] }}" > 
 	  </div>		 
 	  </div>
 
  			</div> <!-- End Col md 4 -->
+
+			 <div class="col-md-4">
+
+				<div class="form-group">
+			  <h5>eMail</h5>
+			  <div class="controls">
+		   <input type="text" name="email" class="form-control" value="{{ $editData['student']['email'] }}" > 
+			</div>		 
+			</div>
+			
+				   </div> <!-- End Col md 4 --> 
 
 
 	<div class="col-md-4">
