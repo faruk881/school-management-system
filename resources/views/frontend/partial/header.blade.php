@@ -76,9 +76,9 @@
 						<li>
 							<a href="{{ route('contact') }}">Contact Us</a>
 						</li>
-						<li>
+						{{-- <li>
 							<a href="{{ route('contact') }}">Student/Guardian Portal</a>
-						</li>
+						</li> --}}
 					</ul>
 				</nav>
 			</div>
