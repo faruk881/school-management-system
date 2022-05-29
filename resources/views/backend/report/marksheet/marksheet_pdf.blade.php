@@ -22,7 +22,7 @@
     <!-- Left side column. contains the logo and sidebar -->
     {{-- @include('admin.body.sidebar') --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <div class="content-wrapper">
+    <div class="noclass"> <!--it was content-wrapper. For full screen I renamed this class to a random name-->
       <div class="container-full">
         <!-- Content Header (Page header) -->
         <!-- Main content -->
