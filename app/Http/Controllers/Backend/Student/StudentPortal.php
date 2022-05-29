@@ -3,27 +3,19 @@
 namespace App\Http\Controllers\Backend\Student;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\AccountStudentFee;
-use App\Models\SchoolSubject;
-use App\Models\StudentClass; 
-use App\Models\AssignSubject;
-use App\Models\AssignTeacherSubject;
-use App\Models\StudentShift;
-use App\Models\StudentGroup;
-use App\Models\StudentYear;
 use App\Models\AssignStudent;
-use App\Models\StudentAttendance;
-use App\Models\User;
-use App\Models\Designation;
-use App\Models\DiscountStudent;
+use App\Models\StudentMarks;
+use App\Models\MarksGrade;
 use App\Models\FeeCategoryAmount;
 use Illuminate\Support\Facades\Auth;
-use PDF;
+use Illuminate\Http\Request;
+use App\Models\ExamType;
+// use GuzzleHttp\Psr7\Request;
 
-
-class StudentFinancialInfo extends Controller
+class StudentPortal extends Controller
 {
+    //______________________________________________________________Student Financial Info____________________________________________________
     public function FinancialInfo() {
         $data['allData'] = AccountStudentFee::where('student_id',Auth::user()->id)->orderBy('date','desc')->get();
 
@@ -52,6 +44,7 @@ class StudentFinancialInfo extends Controller
         while(($reg_date = strtotime('+1 MONTH', $reg_date)) <= $current_date) {
             $months++;
         }
+    
 
 
 
@@ -99,6 +92,45 @@ class StudentFinancialInfo extends Controller
         $data['total_paid'] = $monthly_fee_paid + $exam_fee_paid + $reg_fee_paid;
         return view('backend.student_portal.student_financial_info',$data);
     }
+    //_________________________________________________________End of student financial info_________________________________________________//
+
+    //_________________________________________________________Student result info function_______________________________________________________//
+
+    public function ResultInfoView() {
+        $data['exam_type'] = ExamType::all();
+        return view('backend.student_portal.student_result_info_view',$data);
+    }
+
+    public function ResultInfo(Request $request) {
+
+        $xstudent = AssignStudent::with('student_class')->with('student_year')->with('group')->with('shift')->where('student_id',Auth::user()->id)->get();
+            // $xstudent = AssignStudent::where('student_id',Auth::user()->id)->get();
+        $year_id = $xstudent[0]->student_year->id;
+        $class_id = $xstudent[0]->student_class->id;
+        $exam_type_id = $request->exam_type_id;
+        $id_no = Auth::user()->id_no;
+
+        $count_fail = StudentMarks::where('year_id',$year_id)->where('class_id',$class_id)->where('exam_type_id',$exam_type_id)->where('id_no',$id_no)->where('marks','<','33')->get()->count();
+    	// dd($count_fail);
+        
+        $singleStudent = StudentMarks::where('year_id',$year_id)->where('class_id',$class_id)->where('exam_type_id',$exam_type_id)->where('id_no',$id_no)->first();
+        if ($singleStudent == true) {
+    
+            $allMarks = StudentMarks::with(['assign_subject','year'])->where('year_id',$year_id)->where('class_id',$class_id)->where('exam_type_id',$exam_type_id)->where('id_no',$id_no)->get();
+    	    // dd($allMarks->toArray())
+
+            $allGrades = MarksGrade::all();
+
+            return view('backend.student_portal.student_result_info',compact('allMarks','allGrades','count_fail'));
+        } else {
+            $notification = array(
+                'message' => 'Result not published yet',
+                'alert-type' => 'error',
+            );
+            return redirect()->back()->with($notification);
+        }
 
 
+        
+    }
 }

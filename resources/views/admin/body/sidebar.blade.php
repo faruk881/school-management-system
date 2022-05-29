@@ -248,7 +248,7 @@
           </a>
           <ul class="treeview-menu">
             <li class="{{ ($route == 'student.financial.info')?'active':'' }}"><a href="{{ route('student.financial.info') }}"><i class="ti-more"></i>Financial Information</a></li>         
-            {{-- <li class="{{ ($route == 'marksheet.generate.view')?'active':'' }}"><a href="{{ route('marksheet.generate.view') }}"><i class="ti-more"></i>MarkSheet Generate</a></li>          --}}
+            <li class="{{ ($route == 'student.result.info.view')?'active':'' }}"><a href="{{ route('student.result.info.view') }}"><i class="ti-more"></i>Result</a></li>         
           </ul>
         </li>
         @endif

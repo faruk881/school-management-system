@@ -42,7 +42,7 @@ use App\Http\Controllers\Backend\Student\ExamScheduleController;
 use App\Http\Controllers\ThemeSwitchController;
 use App\Http\Controllers\PublicMessageController;
 use App\Http\Controllers\Backend\Account\StudentFeeControllerViewStudentFee;
-use App\Http\Controllers\Backend\Student\StudentFinancialInfo;
+use App\Http\Controllers\Backend\Student\StudentPortal;
 
 /*
 |--------------------------------------------------------------------------
@@ -156,8 +156,10 @@ Route::group(['middleware' => 'auth'],function(){
 
     //Routes for Student Portal
 
-    Route::prefix('studentportal')->group(function() {
-        Route::get('financialinfo',[StudentFinancialInfo::class,'FinancialInfo'])->name('student.financial.info');
+    Route::prefix('studentportal/')->group(function() {
+        Route::get('financialinfo',[StudentPortal::class,'FinancialInfo'])->name('student.financial.info');
+        Route::get('resultinfo/view',[StudentPortal::class,'ResultInfoView'])->name('student.result.info.view');
+        Route::get('resultinfo',[StudentPortal::class,'ResultInfo'])->name('student.result.info');
     });
 
     //Routes For Student class

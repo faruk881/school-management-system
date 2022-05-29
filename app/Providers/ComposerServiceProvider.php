@@ -42,7 +42,8 @@ class ComposerServiceProvider extends ServiceProvider
                 'frontend.event',
                 'frontend.notice',
                 'backend.employee.employee_reg.employee_details_pdf',
-                'backend.report.attend_report_student.student_attend_report_pdf'
+                'backend.report.attend_report_student.student_attend_report_pdf',
+                'backend.student_portal.student_result_info'
             ],
             'App\Http\ViewComposers\FrontendMasterComposer'
         );
