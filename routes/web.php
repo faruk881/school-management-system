@@ -160,6 +160,7 @@ Route::group(['middleware' => 'auth'],function(){
         Route::get('financialinfo',[StudentPortal::class,'FinancialInfo'])->name('student.financial.info');
         Route::get('resultinfo/view',[StudentPortal::class,'ResultInfoView'])->name('student.result.info.view');
         Route::get('resultinfo',[StudentPortal::class,'ResultInfo'])->name('student.result.info');
+        Route::post('downloadresult',[StudentPortal::class,'ResultDownload'])->name('student.result.download');
     });
 
     //Routes For Student class

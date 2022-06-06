@@ -109,6 +109,7 @@ class StudentPortal extends Controller
         $class_id = $xstudent[0]->student_class->id;
         $exam_type_id = $request->exam_type_id;
         $id_no = Auth::user()->id_no;
+        $data['exam_type_id'] = $exam_type_id;
 
         $count_fail = StudentMarks::where('year_id',$year_id)->where('class_id',$class_id)->where('exam_type_id',$exam_type_id)->where('id_no',$id_no)->where('marks','<','33')->get()->count();
     	// dd($count_fail);
@@ -121,7 +122,7 @@ class StudentPortal extends Controller
 
             $allGrades = MarksGrade::all();
 
-            return view('backend.student_portal.student_result_info',compact('allMarks','allGrades','count_fail'));
+            return view('backend.student_portal.student_result_info',compact('allMarks','allGrades','count_fail'),$data);
         } else {
             $notification = array(
                 'message' => 'Result not published yet',
@@ -133,4 +134,17 @@ class StudentPortal extends Controller
 
         
     }
+    //_________________________________________________________Student result info function_______________________________________________________//
+
+    //_________________________________________________________Student result download function_______________________________________________________//
+
+    public function ResultDownload(Request $request) {
+
+        $data['exam_type_id']= $request->exam_type_id;
+        return view('backend.student_portal.student_result_info_pdf',$data);
+    }
+
+    //_________________________________________________________End of Student result download function_______________________________________________________//
+    
+    
 }
