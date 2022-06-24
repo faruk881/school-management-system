@@ -11,6 +11,7 @@ use App\Models\FeeCategoryAmount;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\ExamType;
+use PDF;
 // use GuzzleHttp\Psr7\Request;
 
 class StudentPortal extends Controller
@@ -123,6 +124,7 @@ class StudentPortal extends Controller
             $allGrades = MarksGrade::all();
 
             return view('backend.student_portal.student_result_info',compact('allMarks','allGrades','count_fail'),$data);
+            
         } else {
             $notification = array(
                 'message' => 'Result not published yet',
@@ -140,8 +142,37 @@ class StudentPortal extends Controller
 
     public function ResultDownload(Request $request) {
 
-        $data['exam_type_id']= $request->exam_type_id;
-        return view('backend.student_portal.student_result_info_pdf',$data);
+        $xstudent = AssignStudent::with('student_class')->with('student_year')->with('group')->with('shift')->where('student_id',Auth::user()->id)->get();
+            // $xstudent = AssignStudent::where('student_id',Auth::user()->id)->get();
+        $year_id = $xstudent[0]->student_year->id;
+        $class_id = $xstudent[0]->student_class->id;
+        $exam_type_id = $request->exam_type_id;
+        $id_no = Auth::user()->id_no;
+        $data['exam_type_id'] = $exam_type_id;
+
+        $count_fail = StudentMarks::where('year_id',$year_id)->where('class_id',$class_id)->where('exam_type_id',$exam_type_id)->where('id_no',$id_no)->where('marks','<','33')->get()->count();
+    	// dd($count_fail);
+        
+        $singleStudent = StudentMarks::where('year_id',$year_id)->where('class_id',$class_id)->where('exam_type_id',$exam_type_id)->where('id_no',$id_no)->first();
+        if ($singleStudent == true) {
+    
+            $allMarks = StudentMarks::with(['assign_subject','year'])->where('year_id',$year_id)->where('class_id',$class_id)->where('exam_type_id',$exam_type_id)->where('id_no',$id_no)->get();
+    	    // dd($allMarks->toArray())
+
+            $allGrades = MarksGrade::all();
+
+            // return view('backend.student_portal.student_result_info_pdf',compact('allMarks','allGrades','count_fail'),$data);
+            	$pdf = PDF::loadView('backend.student_portal.student_result_info_pdf',compact('allMarks','allGrades','count_fail'));
+	            $pdf->SetProtection(['copy','print'],'','pass');
+	            return $pdf->stream('document.pdf');
+        } else {
+            $notification = array(
+                'message' => 'Result not published yet',
+                'alert-type' => 'error',
+            );
+            return redirect()->back()->with($notification);
+        }
+        // return view('',$data);
     }
 
     //_________________________________________________________End of Student result download function_______________________________________________________//
