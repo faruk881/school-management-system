@@ -6,7 +6,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\SchoolEvent;
 use App\Models\SchoolNotice;
+use App\Models\User;
+use App\Models\StudentYear;
+use App\Models\StudentClass;
+use App\Models\StudentGroup;
+use App\Models\StudentShift;
+use App\Models\AdmissionForm;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class SiteManagementController extends Controller
 {
@@ -176,8 +183,75 @@ class SiteManagementController extends Controller
         $event['singleEvent'] = SchoolEvent::where('id',$id)->get();
         return view('frontend.event_details',$event);
     } //end of event details function  
+    
+
+    public function TeacherDetails($id) {
+        $teacher['teacher'] = User::where('id',$id)->get();
+        return view('frontend.teacher_profile',$teacher);
+
+    } //End of teacher details function
     public function NoticeDetails($id){
         $notice['singleNotice'] = SchoolNotice::with('created_by')->where('id',$id)->get();
         return view('frontend.notice_details',$notice);
     } //end of event details function  
+
+    public function AdmissionForm() {
+        $data['years'] = StudentYear::all();
+    	$data['classes'] = StudentClass::all();
+    	$data['groups'] = StudentGroup::all();
+    	$data['shifts'] = StudentShift::all();
+        return view('frontend.admission_form', $data);
+    }
+
+    public function AdmissionStore(Request $request) {
+
+        $af = new AdmissionForm();
+        $af->name = $request->name;
+        $af->email = $request->email;
+        $af->mobile = $request->phone;
+        $af->address = $request->address;
+        $af->gender = $request->gender;
+        $af->fname = $request->fname;
+        $af->mname = $request->mname;
+        $af->religion = $request->religion;
+        $af->dob = $request->dob;
+        $af->class_id = $request->class_id;
+        $af->group_id = $request->group_id;
+        $af->shift_id = $request->shift_id;
+        $af->save();
+        return redirect()->back();
+    }
+
+    public function AdmissionView() {
+
+        $data['admission_info'] = AdmissionForm::get();
+
+        return view('backend.publicmsg.admission_view',$data);
+    }
+
+    public function AdmissionApprove($id){
+
+        $af = AdmissionForm::find($id);
+        $af->action_by = Auth()->user()->name;
+        $af->status = 'approved';
+        $af->save();
+
+        $data['ai'] = AdmissionForm::find($id);
+        $data['years'] = StudentYear::get();
+        $data['classes'] = StudentClass::get();
+        $data['groups'] = StudentGroup::get();
+        $data['shifts'] = StudentShift::get();
+
+        return view('backend.publicmsg.student_add',$data);
+    }
+
+    public function AdmissionReject($id) {
+
+        
+        $af = AdmissionForm::find($id);
+        $af->action_by = Auth()->user()->name;
+        $af->status = 'rejected';
+        $af->save();
+        return redirect()->back();
+    }
 }

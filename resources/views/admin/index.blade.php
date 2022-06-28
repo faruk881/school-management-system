@@ -24,7 +24,7 @@
             <!--------------------------------------------------Admin Section------------------------------------------------------- -->
             @if (Auth::user()->usertype == 'Admin') <!--This section will only visible for admin--> 
             <div class="row">
-                    <div class="col-xl-3 col-6">
+                    <div class="col-xl-4   col-6">
                         <div class="box overflow-hidden pull-up">
                             <div class="box-body">							
                                 <div class="icon bg-primary-light rounded w-60 h-60">
@@ -39,7 +39,7 @@
                         </div>
                     </div>              
                 
-                    <div class="col-xl-3 col-6">
+                    <div class="col-xl-4   col-6">
                         <div class="box overflow-hidden pull-up">
                             <div class="box-body">							
                                 <div class="icon bg-primary-light rounded w-60 h-60">
@@ -54,7 +54,7 @@
                         </div>
                     </div>
                     
-                    <div class="col-xl-3 col-6">
+                    <div class="col-xl-4   col-6">
                         <div class="box overflow-hidden pull-up">
                             <div class="box-body">							
                                 <div class="icon bg-primary-light rounded w-60 h-60">
@@ -69,7 +69,7 @@
                             </div>
                         </div>
                     </div>       
-                    <div class="col-xl-3 col-6">
+                    <div class="col-xl-4   col-6">
                         <div class="box overflow-hidden pull-up">
                             <div class="box-body">							
                                 <div class="icon bg-danger-light rounded w-60 h-60">
@@ -78,6 +78,19 @@
                                 <div>
                                     <p class="text-mute mt-20 mb-0 font-size-16"><a href="{{ route('public.message.view') }}">Message From Site Visitor</a></p>
                                     <h3 class="text-white mb-0 font-weight-500">{{ $readed_publicmsg }} <small class="text-success"><i class="fa fa-caret-up"></i>+ {{ $unreaded_publicmsg }}</small></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4   col-6">
+                        <div class="box overflow-hidden pull-up">
+                            <div class="box-body">							
+                                <div class="icon bg-danger-light rounded w-60 h-60">
+                                    <i class="text-danger mr-0 font-size-24 mdi mdi-message"></i>
+                                </div>
+                                <div>
+                                    <p class="text-mute mt-20 mb-0 font-size-16"><a href="{{ route('admission.view') }}">Admission Request</a></p>
+                                    <h3 class="text-white mb-0 font-weight-500">{{ $not_pending_admission }} <small class="text-success"><i class="fa fa-caret-up"></i>+ {{ $pending_admission }}</small></h3>
                                 </div>
                             </div>
                         </div>

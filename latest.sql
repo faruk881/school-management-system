@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 28, 2022 at 03:46 PM
+-- Generation Time: Jun 26, 2022 at 04:50 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.3.33
 
@@ -106,7 +106,51 @@ INSERT INTO `account_student_fees` (`id`, `year_id`, `class_id`, `student_id`, `
 (97, 3, 6, 15, 3, '2022-02-01', 9600, '2022-02-25 12:06:18', '2022-02-25 12:06:18'),
 (98, 3, 6, 16, 3, '2022-02-01', 9600, '2022-02-25 12:06:18', '2022-02-25 12:06:18'),
 (99, 3, 6, 17, 3, '2022-02-01', 10200, '2022-02-25 12:06:18', '2022-02-25 12:06:18'),
-(100, 3, 6, 18, 3, '2022-02-01', 10800, '2022-02-25 12:06:18', '2022-02-25 12:06:18');
+(100, 3, 6, 18, 3, '2022-02-01', 10800, '2022-02-25 12:06:18', '2022-02-25 12:06:18'),
+(114, 3, 6, 15, 1, '2022-03-01', 12000, '2022-03-05 16:23:24', '2022-03-05 16:23:24'),
+(115, 3, 6, 16, 1, '2022-03-01', 12000, '2022-03-05 16:23:24', '2022-03-05 16:23:24'),
+(116, 3, 6, 17, 1, '2022-03-01', 12750, '2022-03-05 16:23:24', '2022-03-05 16:23:24'),
+(117, 3, 6, 18, 1, '2022-03-01', 13500, '2022-03-05 16:23:24', '2022-03-05 16:23:24'),
+(118, 3, 6, 19, 1, '2022-03-01', 14250, '2022-03-05 16:23:24', '2022-03-05 16:23:24'),
+(119, 3, 6, 20, 1, '2022-03-01', 14700, '2022-03-05 16:23:24', '2022-03-05 16:23:24'),
+(120, 3, 6, 21, 1, '2022-03-01', 13050, '2022-03-05 16:23:24', '2022-03-05 16:23:24'),
+(121, 3, 6, 22, 1, '2022-03-01', 13200, '2022-03-05 16:23:24', '2022-03-05 16:23:24'),
+(122, 3, 6, 23, 1, '2022-03-01', 13200, '2022-03-05 16:23:24', '2022-03-05 16:23:24'),
+(123, 3, 6, 25, 1, '2022-03-01', 13500, '2022-03-05 16:23:24', '2022-03-05 16:23:24'),
+(124, 3, 6, 30, 1, '2022-03-01', 12000, '2022-03-05 16:23:24', '2022-03-05 16:23:24'),
+(125, 3, 6, 15, 2, '2022-03-02', 4000, '2022-03-05 16:33:08', '2022-03-05 16:33:08'),
+(126, 3, 6, 16, 2, '2022-03-02', 4000, '2022-03-05 16:33:08', '2022-03-05 16:33:08'),
+(127, 3, 6, 17, 2, '2022-03-02', 4250, '2022-03-05 16:33:08', '2022-03-05 16:33:08'),
+(128, 3, 6, 18, 2, '2022-03-02', 4500, '2022-03-05 16:33:08', '2022-03-05 16:33:08'),
+(129, 3, 6, 19, 2, '2022-03-02', 4750, '2022-03-05 16:33:08', '2022-03-05 16:33:08'),
+(130, 3, 6, 20, 2, '2022-03-02', 4900, '2022-03-05 16:33:08', '2022-03-05 16:33:08'),
+(131, 3, 6, 21, 2, '2022-03-02', 4350, '2022-03-05 16:33:08', '2022-03-05 16:33:08'),
+(132, 3, 6, 22, 2, '2022-03-02', 4400, '2022-03-05 16:33:08', '2022-03-05 16:33:08'),
+(133, 3, 6, 23, 2, '2022-03-02', 4400, '2022-03-05 16:33:08', '2022-03-05 16:33:08'),
+(134, 3, 6, 25, 2, '2022-03-02', 4500, '2022-03-05 16:33:08', '2022-03-05 16:33:08'),
+(135, 3, 6, 30, 2, '2022-03-02', 4000, '2022-03-05 16:33:08', '2022-03-05 16:33:08'),
+(136, 3, 6, 15, 2, '2022-02-02', 4000, '2022-03-05 16:40:35', '2022-03-05 16:40:35'),
+(137, 3, 6, 16, 2, '2022-02-02', 4000, '2022-03-05 16:40:35', '2022-03-05 16:40:35'),
+(138, 3, 6, 17, 2, '2022-02-02', 4250, '2022-03-05 16:40:35', '2022-03-05 16:40:35'),
+(139, 3, 6, 18, 2, '2022-02-02', 4500, '2022-03-05 16:40:35', '2022-03-05 16:40:35'),
+(140, 3, 6, 19, 2, '2022-02-02', 4750, '2022-03-05 16:40:35', '2022-03-05 16:40:35'),
+(141, 3, 6, 20, 2, '2022-02-02', 4900, '2022-03-05 16:40:35', '2022-03-05 16:40:35'),
+(142, 3, 6, 21, 2, '2022-02-02', 4350, '2022-03-05 16:40:35', '2022-03-05 16:40:35'),
+(143, 3, 6, 22, 2, '2022-02-02', 4400, '2022-03-05 16:40:35', '2022-03-05 16:40:35'),
+(144, 3, 6, 23, 2, '2022-02-02', 4400, '2022-03-05 16:40:35', '2022-03-05 16:40:35'),
+(145, 3, 6, 25, 2, '2022-02-02', 4500, '2022-03-05 16:40:35', '2022-03-05 16:40:35'),
+(146, 3, 6, 30, 2, '2022-02-02', 4000, '2022-03-05 16:40:35', '2022-03-05 16:40:35'),
+(147, 3, 6, 15, 3, '2022-02-01', 12000, '2022-03-05 16:48:16', '2022-03-05 16:48:16'),
+(148, 3, 6, 16, 3, '2022-02-01', 12000, '2022-03-05 16:48:16', '2022-03-05 16:48:16'),
+(149, 3, 6, 17, 3, '2022-02-01', 12000, '2022-03-05 16:48:16', '2022-03-05 16:48:16'),
+(150, 3, 6, 18, 3, '2022-02-01', 12000, '2022-03-05 16:48:16', '2022-03-05 16:48:16'),
+(151, 3, 6, 19, 3, '2022-02-01', 12000, '2022-03-05 16:48:16', '2022-03-05 16:48:16'),
+(152, 3, 6, 20, 3, '2022-02-01', 12000, '2022-03-05 16:48:16', '2022-03-05 16:48:16'),
+(153, 3, 6, 21, 3, '2022-02-01', 12000, '2022-03-05 16:48:16', '2022-03-05 16:48:16'),
+(154, 3, 6, 22, 3, '2022-02-01', 12000, '2022-03-05 16:48:16', '2022-03-05 16:48:16'),
+(155, 3, 6, 23, 3, '2022-02-01', 12000, '2022-03-05 16:48:16', '2022-03-05 16:48:16'),
+(156, 3, 6, 25, 3, '2022-02-01', 12000, '2022-03-05 16:48:16', '2022-03-05 16:48:16'),
+(157, 3, 6, 30, 3, '2022-02-01', 12000, '2022-03-05 16:48:16', '2022-03-05 16:48:16');
 
 -- --------------------------------------------------------
 
@@ -131,7 +175,7 @@ CREATE TABLE `assign_students` (
 --
 
 INSERT INTO `assign_students` (`id`, `student_id`, `roll`, `class_id`, `year_id`, `group_id`, `shift_id`, `created_at`, `updated_at`) VALUES
-(1, 8, NULL, 1, 1, 1, 1, '2021-12-09 09:28:42', '2021-12-09 12:05:00'),
+(1, 8, NULL, 8, 1, 1, 1, '2021-12-09 09:28:42', '2021-12-09 12:05:00'),
 (2, 9, NULL, 1, 3, 1, 1, '2021-12-10 07:53:25', '2021-12-10 07:53:25'),
 (3, 10, NULL, 2, 3, 2, 2, '2021-12-10 07:55:14', '2021-12-10 07:55:14'),
 (4, 15, 1, 6, 3, 3, 1, '2022-01-07 07:26:26', '2022-01-09 09:32:02'),
@@ -145,7 +189,11 @@ INSERT INTO `assign_students` (`id`, `student_id`, `roll`, `class_id`, `year_id`
 (12, 23, 5, 6, 3, 3, 1, '2022-01-07 11:42:23', '2022-01-09 09:32:02'),
 (13, 25, NULL, 6, 3, 3, 1, '2022-02-10 09:48:25', '2022-02-10 09:48:25'),
 (14, 30, NULL, 6, 3, 3, 1, '2022-02-17 11:53:01', '2022-02-17 11:53:01'),
-(15, 31, NULL, 7, 3, 1, 1, '2022-02-18 11:37:35', '2022-02-18 11:37:35');
+(15, 31, NULL, 7, 3, 1, 1, '2022-02-18 11:37:35', '2022-02-18 11:37:35'),
+(16, 33, NULL, 6, 6, 2, 1, '2022-05-27 10:11:14', '2022-05-27 10:11:14'),
+(17, 34, NULL, 8, 6, 2, 1, '2022-05-27 10:15:37', '2022-05-27 10:15:37'),
+(18, 35, NULL, 8, 6, 2, 1, '2022-05-27 10:29:22', '2022-05-27 10:29:22'),
+(19, 36, NULL, 8, 6, 2, 1, '2022-05-28 17:35:16', '2022-05-28 17:35:16');
 
 -- --------------------------------------------------------
 
@@ -278,7 +326,11 @@ INSERT INTO `discount_students` (`id`, `assign_student_id`, `fee_category_id`, `
 (12, 12, 1, 12, '2022-01-07 11:42:23', '2022-01-07 11:42:23'),
 (13, 13, 1, 10, '2022-02-10 09:48:25', '2022-02-10 09:48:25'),
 (14, 14, 1, 20, '2022-02-17 11:53:01', '2022-02-17 11:53:01'),
-(15, 15, 1, 10, '2022-02-18 11:37:35', '2022-02-18 11:37:35');
+(15, 15, 1, 10, '2022-02-18 11:37:35', '2022-02-18 11:37:35'),
+(16, 16, 1, 15, '2022-05-27 10:11:14', '2022-05-27 10:11:14'),
+(17, 17, 1, 12, '2022-05-27 10:15:37', '2022-05-27 10:15:37'),
+(18, 18, 1, 20, '2022-05-27 10:29:22', '2022-05-27 10:29:22'),
+(19, 19, 1, 20, '2022-05-28 17:35:16', '2022-05-28 17:35:16');
 
 -- --------------------------------------------------------
 
@@ -520,12 +572,12 @@ INSERT INTO `fee_category_amounts` (`id`, `fee_category_id`, `class_id`, `amount
 (37, 2, 6, 5000, '2022-01-07 00:59:09', '2022-01-07 00:59:09'),
 (38, 2, 7, 10000, '2022-01-07 00:59:09', '2022-01-07 00:59:09'),
 (39, 2, 8, 15000, '2022-01-07 00:59:09', '2022-01-07 00:59:09'),
-(40, 3, 6, 12000, '2022-02-15 20:56:28', '2022-02-15 20:56:28'),
-(41, 3, 7, 21000, '2022-02-15 20:56:28', '2022-02-15 20:56:28'),
-(42, 3, 8, 21000, '2022-02-15 20:56:28', '2022-02-15 20:56:28'),
 (43, 5, 6, 200, '2022-02-15 20:56:55', '2022-02-15 20:56:55'),
 (44, 5, 7, 300, '2022-02-15 20:56:55', '2022-02-15 20:56:55'),
-(45, 5, 8, 400, '2022-02-15 20:56:55', '2022-02-15 20:56:55');
+(45, 5, 8, 400, '2022-02-15 20:56:55', '2022-02-15 20:56:55'),
+(46, 3, 6, 12000, '2022-05-28 18:14:26', '2022-05-28 18:14:26'),
+(47, 3, 7, 21000, '2022-05-28 18:14:26', '2022-05-28 18:14:26'),
+(48, 3, 8, 20000, '2022-05-28 18:14:26', '2022-05-28 18:14:26');
 
 -- --------------------------------------------------------
 
@@ -581,6 +633,69 @@ INSERT INTO `marks_grades` (`id`, `grade_name`, `grade_point`, `start_marks`, `e
 (5, 'C', '2.00', '40', '49', '2.00', '2.99', 'Disappoint', '2022-01-09 08:59:13', '2022-01-09 08:59:13'),
 (6, 'D', '1.00', '33', '39', '1.00', '1.99', 'Bad', '2022-01-09 09:00:21', '2022-01-09 09:00:21'),
 (7, 'F', '0.00', '00', '32', '0.00', '0.99', 'Fail', '2022-01-09 09:00:57', '2022-01-09 09:00:57');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `menus`
+--
+
+CREATE TABLE `menus` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `route` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `parent_id` int(11) DEFAULT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `order_by` int(11) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `menus`
+--
+
+INSERT INTO `menus` (`id`, `name`, `route`, `parent_id`, `slug`, `order_by`, `created_at`, `updated_at`) VALUES
+(1, 'Manage User', NULL, NULL, 'manage-user', 1, NULL, NULL),
+(2, 'View User', 'user.view', 1, 'view-user', 1, NULL, NULL),
+(3, 'Add User', 'users.add', 1, 'add-user', 2, NULL, NULL),
+(4, 'Manage Profile', '', NULL, 'manage-profile', 2, NULL, NULL),
+(5, 'Your Profile', 'profile.view', 4, 'your-profile', 1, NULL, NULL),
+(1, 'Manage User', NULL, NULL, 'manage-user', 1, NULL, NULL),
+(2, 'View User', 'user.view', 1, 'view-user', 1, NULL, NULL),
+(3, 'Add User', 'users.add', 1, 'add-user', 2, NULL, NULL),
+(4, 'Manage Profile', '', NULL, 'manage-profile', 2, NULL, NULL),
+(5, 'Your Profile', 'profile.view', 4, 'your-profile', 1, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `menu_permissions`
+--
+
+CREATE TABLE `menu_permissions` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `menu_id` int(11) NOT NULL,
+  `role_id` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `menu_permissions`
+--
+
+INSERT INTO `menu_permissions` (`id`, `menu_id`, `role_id`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, NULL, NULL),
+(2, 2, 1, NULL, NULL),
+(3, 3, 1, NULL, NULL),
+(4, 4, 1, NULL, NULL),
+(5, 5, 1, NULL, NULL),
+(1, 1, 1, NULL, NULL),
+(2, 2, 1, NULL, NULL),
+(3, 3, 1, NULL, NULL),
+(4, 4, 1, NULL, NULL),
+(5, 5, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -647,6 +762,13 @@ CREATE TABLE `password_resets` (
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `password_resets`
+--
+
+INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+('omarfaruk.likhon@gmail.com', '$2y$10$Ccf5ZEduF0ezFZI31Rq56ezDDQCwex7ymuY3G8tPApn7fcFGhdvuG', '2022-04-01 09:09:13');
 
 -- --------------------------------------------------------
 
@@ -881,8 +1003,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('BoBKVk8wfmp2fYDcCy4jSB0wygLe7Gr9agphOTVF', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoieVV1OGl4YUpsbnk3OGRsNXhMN2liVTRYcllnTkFETThtN2k5cFhKcSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1646052446),
-('MrCavT0Jk2AKZw1FqkBwVOr4DC9ir8nepB2TuOj0', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiSEh1a0FFSkR2ZXNxcWtnejhtRThUQngxU3lRTUVHdmhWaDA5VTNxQSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MzoidXJsIjthOjA6e31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTAkUHdxNnRPSEdJUVNodTlxZFNBVWVYdS45anhqemVkQm9DeHNxd2s5L01hcHpxdFRSRmVOZ08iO30=', 1645992611);
+('xYkC7SFSOxVK5ovv8knLlvsK6o8Hcj6J6ZNiJ89H', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36', 'YTo3OntzOjM6InVybCI7YTowOnt9czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjk6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9jb250YWN0Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo2OiJfdG9rZW4iO3M6NDA6IlFqbWlhUEsyTnBCRHNPSWNvT0pJd1l3c2I3U29NWXJQb1VQOWZHV04iO3M6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRQd3E2dE9IR0lRU2h1OXFkU0FVZVh1LjlqeGp6ZWRCb0N4c3F3azkvTWFwenF0VFJGZU5nTyI7czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkUHdxNnRPSEdJUVNodTlxZFNBVWVYdS45anhqemVkQm9DeHNxd2s5L01hcHpxdFRSRmVOZ08iO30=', 1656178011);
 
 -- --------------------------------------------------------
 
@@ -1127,30 +1248,35 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `usertype`, `name`, `email`, `email_verified_at`, `password`, `mobile`, `address`, `gender`, `image`, `fname`, `mname`, `religion`, `id_no`, `dob`, `code`, `role`, `join_date`, `designation_id`, `salary`, `status`, `remember_token`, `current_team_id`, `profile_photo_path`, `theme`, `edu_qualification`, `edu_institute`, `facebook_link`, `instagram_link`, `twitter_link`, `total_monthly_fee_paid`, `total_registration_fee_paid`, `total_exam_fee_paid`, `created_at`, `updated_at`) VALUES
 (1, 'Admin', 'Admin', 'admin@gmail.com', NULL, '$2y$10$Pwq6tOHGIQShu9qdSAUeXu.9jxjzedBoCxsqwk9/MapzqtTRFeNgO', '01750089881', 'Dhaka Bangladesh', 'Male', '20211212125620200211_165927.jpg', 'MD REZAUL KARIM', 'MST KOMOLA BEGUM', 'ISLAM', NULL, '1996-01-01', NULL, 'Admin', NULL, NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-02-25 15:43:54'),
-(8, 'Student', 'MD SHAKIB KHAN', NULL, NULL, '$2y$10$3PEglp3gHZcOaDrGk1L1nOM9xgbTvYLto4.47uUjMRvvv55lXc.DC', '01750089881', 'Dhaka, Bangladesh', 'Male', '202112091528jordan-mcgee-moqWSeBjLIc-unsplash.jpg', 'MD AMIR KHAN', 'KRISTEN STWART', 'Islam', '20180001', '1996-01-01', '5165', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-09 09:28:42', '2021-12-09 09:28:42'),
+(8, 'Student', 'MD SHAKIB KHAN', 'shakib@gmail.com', NULL, '$2y$10$Pwq6tOHGIQShu9qdSAUeXu.9jxjzedBoCxsqwk9/MapzqtTRFeNgO', '01750089881', 'Dhaka, Bangladesh', 'Male', '202205260017cropped-800-800-1104541.jpg', 'MD AMIR KHAN', 'KRISTEN STWART', 'Islam', '20180001', '1996-01-01', '5165', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-09 09:28:42', '2022-05-25 18:17:06'),
 (9, 'Student', 'Keanu Reeves', NULL, NULL, '$2y$10$X6TBTEXyW8tpNzYRpEN4yO5e.406oy.nedISyuVykSfczY8ekw9MG', '01750089881', 'West Kazipara, Mirpur, Dhaka', 'Male', '202112101353reeves.jpg', 'Samuel Nowlin Reeves', 'Patrica Taylor', 'Christan', '20200009', '1964-09-02', '9387', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-10 07:53:25', '2021-12-10 07:53:25'),
 (10, 'Student', 'Leonardo DiCaprio', NULL, NULL, '$2y$10$OhH0tEMiGOrb.Z2/7NJ8KewCMqfxRtDSQAHWpDmKO93/srd5B8Tlu', '01750089881', 'West Shewrapara, Mirpur, Dhaka', 'Male', '202112101355American-actor-Leonardo-DiCaprio-2016.jpg', 'George DiCaprio', 'Irmelin Indenbirken', 'Christan', '20200010', '1974-11-09', '3327', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-10 07:55:14', '2021-12-10 07:55:14'),
 (11, 'employee', 'Quentin Tarantino', 'tt@gmail.com', NULL, '$2y$10$o4LoUd2tTSzP6hvgll4IUuEw3suH/JIZy5FbF/mkMcB.ES/L.bknm', '01750089881', 'Banani, Dhaka', 'Male', '202202111059TARINTINO.jpg', 'Tony Tarantino', 'Connie Zastoupil', 'Christan', '2021120001', '1963-03-27', '7123', NULL, '2021-12-10', 1, 200000, 1, NULL, NULL, NULL, 'dark', 'PHD', 'Oxford University', NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-10 10:47:15', '2022-02-11 04:59:44'),
 (12, 'employee', 'Christopher Nolan', 'nolan@gmail.com', NULL, '$2y$10$DHM7ogFMqypjpuH8m29Luu111o4FvNq/cHto1pJ.KaxATlHmoEG4e', '017500898881', 'Middle badda', 'Male', '202112101653nolan.jpg', 'Brendan James Nolan', 'Christina', 'Christan', '2022120012', '1970-07-30', '4543', NULL, '2022-12-10', 3, 155000, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-10 10:48:24', '2022-01-03 10:28:33'),
 (13, 'employee', 'James Cameron', 'c@gmail.com', NULL, '$2y$10$0sdZ/wauC1w182ijImbztuyYDU30QxNYNdmdbk520fEQoECWWg/pq', '01750089881', 'Badda, Dhaka', 'Male', '202112101651JamesCameronHWOFOct2012.jpg', 'Philip Cameron', 'Shirley', 'Christan', '2021120013', '1954-05-16', '6718', NULL, '2021-12-10', 2, 100000, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-10 10:51:17', '2022-01-03 10:28:56'),
-(14, 'employee', 'MD Foysal', 'foysal@gmail.com', NULL, '$2y$10$5FXfNnA2fYNSpCvlMu1RA.dykLLZ/7I7...KBkmV/2QlW/lE9XdZC', '01970089881', 'Dhaka', 'Male', NULL, 'Jahangir alom', 'Msw hawa begum', 'Islam', '2022010014', '1992-02-02', '4197', NULL, '2022-01-02', 3, 30000, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-01-02 10:00:55', '2022-01-11 11:09:02'),
-(15, 'Student', 'Babu Al Mmin', NULL, NULL, '$2y$10$H4/nHWValELNXzPnmn88yuJQipYcT3CB4yaotYEDrj9y9OcpIegZq', '017589863221', '65 barkat camp sylhet', 'Male', NULL, 'Babu Al Karim', 'MST Sufiya khatun', 'Islam', '20200011', '2004-01-01', '3534', NULL, '2022-01-01', NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, 48000, 60000, 21600, '2022-01-07 07:26:26', '2022-02-25 12:06:18'),
-(16, 'Student', 'Karim Joynal', NULL, NULL, '$2y$10$MzdxggO6lodf/00yD/ApMOlzRKiy.lpOM6CZY68uRS8ahFZEwDpu2', '01758963225', '172 West Kazipara', 'Male', NULL, 'Ruhul Amin', 'Hazera Begum', 'Islam', '20200016', '2008-05-15', '4475', NULL, '2021-12-31', NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, 44000, 48000, 9600, '2022-01-07 07:37:08', '2022-02-25 12:06:18'),
-(17, 'Student', 'Mosharof Arif', NULL, NULL, '$2y$10$k4WVhpTUbVF3AHNBGukkdOyRTKUKX4747nMJ55IHeMz6ueTNUFQBC', '01758963214', '104 Shewrapara, Dhaka', 'Male', NULL, 'Mosharof Karim', 'MSR Nurujjaman', 'Islam', '20200017', '8008-12-05', '4224', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, 21250, 25500, 10200, '2022-01-07 07:38:14', '2022-02-25 12:06:18'),
-(18, 'Student', 'Ferdous Akhi', NULL, NULL, '$2y$10$1s0A2/ylEmxhMmRuklx9n.SG1TqWY88k8Ij43UaaBV2TBkwrDCB1C', '01759913256', '37 Dhanmondi Dhaka', 'Female', NULL, 'Ferdous Rahman', 'MST Fatima', 'Islam', '20200018', '2008-06-10', '2485', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, 18000, 13500, 10800, '2022-01-07 08:53:38', '2022-02-25 12:06:18'),
-(19, 'Student', 'Korim Joynal', NULL, NULL, '$2y$10$AIUgJNaWNiFcQjk30gWJWOmPDMPyNdPWhu5Ve1LjfntQoyDZtQw4i', '01786613115', '330 Purbachal, Dhaka', 'Female', NULL, 'Kazi Nazrul', 'Sufiya Kamal', 'Islam', '20200019', '2008-03-15', '3925', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, 19000, 14250, NULL, '2022-01-07 08:56:02', '2022-02-17 09:54:47'),
-(20, 'Student', 'Anni Akter', NULL, NULL, '$2y$10$88ffb3otLdTLq3k7YEfvCeUmpP4hbg59fLUx0YntqHxRVZSQnLEzm', '01750089663', 'Akkelpur, Joypurhat', 'Female', NULL, 'Gopal dash', 'MST M', 'Islam', '20200020', '2008-12-15', '7760', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, 19600, 14700, NULL, '2022-01-07 09:00:11', '2022-02-17 09:54:47'),
-(21, 'Student', 'Anonna Khandakar', NULL, NULL, '$2y$10$J5MqQXoewQSvcfSc5TCzfOVD1w.LyaVrgEzBfhSBO/5HorZ3NLTS2', '01756632116', '46 Panchbibi, Joypurhat', 'Female', NULL, 'Hamid Hossen', 'Mst Hamida Begum', 'Islam', '20200021', '2007-12-31', '5667', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, 17400, 13050, NULL, '2022-01-07 09:01:59', '2022-02-17 09:54:47'),
-(22, 'Student', 'Md Rifat Hossain', NULL, NULL, '$2y$10$wSswcwZKKeYl0z8YyZLEmes.9q/ePyV7Yid3YCTNE9CpGPDQOlzu6', '01758963221', 'Jhalkathi, Barisal', 'Male', NULL, 'Md Tupi Rahman', 'Md Razia Khatun', 'Islam', '20200022', '2008-12-16', '1286', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, 17600, 13200, NULL, '2022-01-07 09:34:04', '2022-02-17 09:54:47'),
-(23, 'Student', 'Md Shawon', NULL, NULL, '$2y$10$/t5vfkmb35hoHYn1C7RXr.KQJwL5pHl6XcEi5ajlCji5gbx5d0F3K', '01750098663', '37 West Road, Dinajpur', 'Male', NULL, 'Md Mirza', 'Mst Annona', 'Islam', '20200023', '2008-12-20', '1413', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, 17600, 13200, NULL, '2022-01-07 11:42:23', '2022-02-17 09:54:47'),
+(14, 'employee', 'MD RONY', 'rony@gmail.com', NULL, '$2y$10$5FXfNnA2fYNSpCvlMu1RA.dykLLZ/7I7...KBkmV/2QlW/lE9XdZC', '01970089881', 'Dhaka', 'Male', NULL, 'Jahangir alom', 'Msw hawa begum', 'Islam', '2022010014', '1992-02-02', '4197', NULL, '2022-01-02', 3, 30000, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-01-02 10:00:55', '2022-01-11 11:09:02'),
+(15, 'Student', 'Babu Al Mmin', NULL, NULL, '$2y$10$H4/nHWValELNXzPnmn88yuJQipYcT3CB4yaotYEDrj9y9OcpIegZq', '017589863221', '65 barkat camp sylhet', 'Male', NULL, 'Babu Al Karim', 'MST Sufiya khatun', 'Islam', '20200011', '2004-01-01', '3534', NULL, '2022-01-01', NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, 8000, 12000, 12000, '2022-01-07 07:26:26', '2022-03-05 16:48:16'),
+(16, 'Student', 'Karim Joynal', 'kj@gmail.com', NULL, '$2y$10$ik.MFemUF/uXM/qBR5DxE.8uLoc7ZUdAAPq/T6IgtshDQWttNxbey', '01758963225', '172 West Kazipara', 'Male', NULL, 'Ruhul Amin', 'Hazera Begum', 'Islam', '20200016', '2008-05-15', '4475', NULL, '2022-01-10', NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, 8000, 12000, 12000, '2022-01-07 07:37:08', '2022-06-03 14:59:34'),
+(17, 'Student', 'Mosharof Arif', NULL, NULL, '$2y$10$k4WVhpTUbVF3AHNBGukkdOyRTKUKX4747nMJ55IHeMz6ueTNUFQBC', '01758963214', '104 Shewrapara, Dhaka', 'Male', NULL, 'Mosharof Karim', 'MSR Nurujjaman', 'Islam', '20200017', '8008-12-05', '4224', NULL, '2022-01-01', NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, 8500, 12750, 12000, '2022-01-07 07:38:14', '2022-03-05 16:48:16'),
+(18, 'Student', 'Ferdous Akhi', NULL, NULL, '$2y$10$1s0A2/ylEmxhMmRuklx9n.SG1TqWY88k8Ij43UaaBV2TBkwrDCB1C', '01759913256', '37 Dhanmondi Dhaka', 'Female', NULL, 'Ferdous Rahman', 'MST Fatima', 'Islam', '20200018', '2008-06-10', '2485', NULL, '2022-01-10', NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, 9000, 13500, 12000, '2022-01-07 08:53:38', '2022-03-05 16:48:16'),
+(19, 'Student', 'Korim Joynal', NULL, NULL, '$2y$10$AIUgJNaWNiFcQjk30gWJWOmPDMPyNdPWhu5Ve1LjfntQoyDZtQw4i', '01786613115', '330 Purbachal, Dhaka', 'Female', NULL, 'Kazi Nazrul', 'Sufiya Kamal', 'Islam', '20200019', '2008-03-15', '3925', NULL, '2022-01-10', NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, 9500, 14250, 12000, '2022-01-07 08:56:02', '2022-03-05 16:48:16'),
+(20, 'Student', 'Anni Akter', NULL, NULL, '$2y$10$88ffb3otLdTLq3k7YEfvCeUmpP4hbg59fLUx0YntqHxRVZSQnLEzm', '01750089663', 'Akkelpur, Joypurhat', 'Female', NULL, 'Gopal dash', 'MST M', 'Islam', '20200020', '2008-12-15', '7760', NULL, '2022-01-10', NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, 9800, 14700, 12000, '2022-01-07 09:00:11', '2022-03-05 16:48:16'),
+(21, 'Student', 'Anonna Khandakar', NULL, NULL, '$2y$10$J5MqQXoewQSvcfSc5TCzfOVD1w.LyaVrgEzBfhSBO/5HorZ3NLTS2', '01756632116', '46 Panchbibi, Joypurhat', 'Female', NULL, 'Hamid Hossen', 'Mst Hamida Begum', 'Islam', '20200021', '2007-12-31', '5667', NULL, '2022-01-10', NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, 8700, 13050, 12000, '2022-01-07 09:01:59', '2022-03-05 16:48:16'),
+(22, 'Student', 'Md Rifat Hossain', NULL, NULL, '$2y$10$wSswcwZKKeYl0z8YyZLEmes.9q/ePyV7Yid3YCTNE9CpGPDQOlzu6', '01758963221', 'Jhalkathi, Barisal', 'Male', NULL, 'Md Tupi Rahman', 'Md Razia Khatun', 'Islam', '20200022', '2008-12-16', '1286', NULL, '2022-01-10', NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, 8800, 13200, 12000, '2022-01-07 09:34:04', '2022-03-05 16:48:16'),
+(23, 'Student', 'Md Shawon', NULL, NULL, '$2y$10$/t5vfkmb35hoHYn1C7RXr.KQJwL5pHl6XcEi5ajlCji5gbx5d0F3K', '01750098663', '37 West Road, Dinajpur', 'Male', NULL, 'Md Mirza', 'Mst Annona', 'Islam', '20200023', '2008-12-20', '1413', NULL, '2022-01-10', NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, 8800, 13200, 12000, '2022-01-07 11:42:23', '2022-03-05 16:48:16'),
 (24, 'employee', 'MD ABID HASAN', 'abid@gmail.com', NULL, '$2y$10$LINpD4m1YhKq2rb3.KiE1uXgC4hZ0b8s7donFAU/rsRydMRL1YS/6', '01750065336', 'Mirpur, Dhaka', 'Male', NULL, 'MD A HASAN', 'MST M HASAN', 'Islam', '2022010015', '1997-09-05', '5728', NULL, '2022-01-15', 3, 20000, 1, NULL, NULL, NULL, 'dark', 'BSC In CSE', 'Northern University Bangladesh', 'https://www.facebook.com', 'https://www.instagram.com', 'https://www.twitter.com', NULL, NULL, NULL, '2022-01-15 08:48:06', '2022-02-11 06:09:25'),
-(25, 'Student', 'Abu Saleh', NULL, NULL, '$2y$10$Nr89.zRG.LFSDlTXaoc.8OLe4oLRAzn7xrOYfPEr.bt.h4bvN3h/W', '01970089881', 'West Shewrapara, Dhaka', 'Male', NULL, 'Kashem Ullah', 'Kobita', 'Islam', '20200024', '1998-01-10', '3900', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, 18000, 13500, NULL, '2022-02-10 09:48:25', '2022-02-17 09:54:47'),
+(25, 'Student', 'Abu Saleh', NULL, NULL, '$2y$10$Nr89.zRG.LFSDlTXaoc.8OLe4oLRAzn7xrOYfPEr.bt.h4bvN3h/W', '01970089881', 'West Shewrapara, Dhaka', 'Male', NULL, 'Kashem Ullah', 'Kobita', 'Islam', '20200024', '1998-01-10', '3900', NULL, '2022-01-01', NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, 9000, 13500, 12000, '2022-02-10 09:48:25', '2022-03-05 16:48:16'),
 (26, 'employee', 'MD MASUD RANA', 'masud@gmail.com', NULL, '$2y$10$x7jB26Nc.Z1YqxcLJr7OZOo0efzEMLWc3L3goOLuFulT5zHaAesAK', '01753369885', '172 North Banani, Dhaka', 'Male', NULL, 'MD HERO ALOM', 'MST HEROIN', 'Islam', '2022020025', '1998-01-11', '4513', NULL, '2022-02-11', 2, 50000, 1, NULL, NULL, NULL, 'dark', 'PHD', 'BUET', NULL, NULL, NULL, NULL, NULL, NULL, '2022-02-11 04:55:35', '2022-02-11 04:55:35'),
 (27, 'employee', 'Kazi Haiyat', 'kazi@gmail.com', NULL, '$2y$10$FqsXFzNemsSBNK6QbZShM.tRLdcjftR5d2dcGNfq/07R5K4r3crgq', '01756698336', 'Mirpur, Dhaka, Bangladesh', 'Male', '202202111208reeves.jpg', 'Kazi Belkun', 'Mst Julikha Begum', 'Islam', '2020010027', '1986-01-01', '9731', NULL, '2020-01-01', 3, 60000, 1, NULL, NULL, NULL, 'dark', 'MSC in Business', 'Kumilla University', 'https://www.facebook.com/omarfaruk.likhon', 'https://www.instagram.com', 'https://www.twitter.com', NULL, NULL, NULL, '2022-02-11 06:08:34', '2022-02-11 06:08:34'),
 (28, 'employee', 'Md Juruj Ali', '649@example.com', NULL, '$2y$10$jOUMMoPUxzQlADLieD.Oc.Yx3emqdIXgoPRli9rZr6Ws6Pq4fYmYa', '01750089881', 'Banani Dhaka', 'Male', '202202160554photo.webp', 'Md Suruj Mia', 'MST Surjo Khatun', 'Islam', '2022020028', '1998-01-16', '1234', NULL, '2022-02-16', 3, 30000, 1, NULL, NULL, NULL, 'dark', 'BSC In EEE', 'Northern University Bangladesh', NULL, NULL, NULL, NULL, NULL, NULL, '2022-02-15 23:54:23', '2022-02-15 23:56:58'),
 (29, 'Admin', 'Operator', 'operator@gmail.com', NULL, '$2y$10$lByMy/uOi3.sV228aourIOAW1fUF2/i4f9jx436JExhb0Oyv/2zS2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '7847', 'Operator', NULL, NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-02-16 05:48:14', '2022-02-16 05:48:14'),
-(30, 'Student', 'Karim Makbul', NULL, NULL, '$2y$10$FlWSb0Rx/aNJu8p789IMA.lskYums93fxL7R0bbvO9n6/GCFPy.w2', '01970089881', 'Mohakhali, Dhaka', 'Male', '202202171753revolt-164_6wVEHfI-unsplash.jpg', 'Makbul Hasan', 'Mst TestDrive', 'Islam', '20200026', '1998-01-17', '1333', NULL, '2022-01-01', NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, 4000, NULL, NULL, '2022-02-17 11:53:01', '2022-02-17 11:54:58'),
-(31, 'Student', 'Md Mosharaf Karim', NULL, NULL, '$2y$10$1.nRQkMD/A9Z9B.bbRSA5eioSVJ8/5FFKBlu2anqllYaGKhMGQ6xG', '0175656898', 'Mohakhali, Dkaha', 'Male', '202202181737aleksandr-eremin-QfHmrIUN9G0-unsplash.jpg', 'Md Kamrul Shah', 'Mst kamal begum', 'Islam', '20200031', '2000-01-01', '2627', NULL, '2022-02-18', NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-02-18 11:37:35', '2022-02-18 11:37:35');
+(30, 'Student', 'Karim Makbul', NULL, NULL, '$2y$10$FlWSb0Rx/aNJu8p789IMA.lskYums93fxL7R0bbvO9n6/GCFPy.w2', '01970089881', 'Mohakhali, Dhaka', 'Male', '202202171753revolt-164_6wVEHfI-unsplash.jpg', 'Makbul Hasan', 'Mst TestDrive', 'Islam', '20200026', '1998-01-17', '1333', NULL, '2022-01-10', NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, 8000, 12000, 12000, '2022-02-17 11:53:01', '2022-03-05 16:48:16'),
+(31, 'Student', 'Md Mosharaf Karim', NULL, NULL, '$2y$10$1.nRQkMD/A9Z9B.bbRSA5eioSVJ8/5FFKBlu2anqllYaGKhMGQ6xG', '0175656898', 'Mohakhali, Dkaha', 'Male', '202202181737aleksandr-eremin-QfHmrIUN9G0-unsplash.jpg', 'Md Kamrul Shah', 'Mst kamal begum', 'Islam', '20200031', '2000-01-01', '2627', NULL, '2022-02-18', NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-02-18 11:37:35', '2022-02-18 11:37:35'),
+(32, 'Admin', 'MD OMAR FARUK', 'omarfaruk.likhon@gmail.com', NULL, '$2y$10$ibXOaVOGq88YH4YZCOgLtu6PTMYHj2a/MlcKInVcT97F49sCaBOwO', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '228', 'Admin', NULL, NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-01 08:56:46', '2022-04-01 08:56:46'),
+(33, 'Student', 'MD SELIM UDDIN', 'selim@gmail.com', NULL, '$2y$10$MtFowGF6J/Zb9ZZyf/chZ.xtNnwM0LCKftf2uz2C6NScx6C.g1Rza', '01987763552', 'Kawla, Dakshin Khan, Dhaka', 'Male', '202205271611cropped-800-800-1104541.jpg', 'MD NASIR MOLLAH', 'MST ROKEYA BEGUM', 'Islam', '20220032', '2004-01-07', '729', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-27 10:11:14', '2022-05-27 10:11:14'),
+(34, 'Student', 'MD MOSHAROF KARIM', 'mk@gmail.com', NULL, '$2y$10$//fiqIB2MD1PHrd4ibpnBOa2FHybQEzIje9MFVOcCV2QKSUdNU44a', '01736554673', 'Shewrapara, Mirpur', 'Male', '202205271615cropped-800-800-1104541.jpg', 'MD RABBI HOSSAIN', 'MST JAHANARA BEGUM', 'Islam', '20220034', '2004-02-11', '2029', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-27 10:15:37', '2022-05-27 10:15:37'),
+(35, 'Student', 'MD OSHEK AKBER', 'oa@gmail.com', NULL, '$2y$10$ik.MFemUF/uXM/qBR5DxE.8uLoc7ZUdAAPq/T6IgtshDQWttNxbey', '01759903772', 'West Kazipara, Mirpur, Dhaka', 'Male', '202205271629cropped-800-800-1104541.jpg', 'MD JAFAR IQBAL', 'MST HAJIRA BEGUM', 'Islam', '20220035', '2004-06-09', '1234', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-27 10:29:22', '2022-05-27 10:29:22'),
+(36, 'Student', 'MD KAZI NAZRUL', 'kn@gmail.com', NULL, '$2y$10$ZNm7o9Jxra/XTKbHNu4.gOFuzFUYv5B/7zntOqFecf5gvj7c..076', '01748890992', 'MIRPUR, DHAKA', 'Male', '202205282335austin-neill-emH2e5SBifE-unsplash.jpg', 'MD DADU SARKAR', 'SUFIA KAMAL', 'Islam', '20220036', '2004-06-15', '1234', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 'dark', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-28 17:35:16', '2022-05-28 17:35:16');
 
 --
 -- Indexes for dumped tables
@@ -1406,13 +1532,13 @@ ALTER TABLE `account_other_costs`
 -- AUTO_INCREMENT for table `account_student_fees`
 --
 ALTER TABLE `account_student_fees`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158;
 
 --
 -- AUTO_INCREMENT for table `assign_students`
 --
 ALTER TABLE `assign_students`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `assign_subjects`
@@ -1436,7 +1562,7 @@ ALTER TABLE `designations`
 -- AUTO_INCREMENT for table `discount_students`
 --
 ALTER TABLE `discount_students`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `employee_attendances`
@@ -1484,7 +1610,7 @@ ALTER TABLE `fee_categories`
 -- AUTO_INCREMENT for table `fee_category_amounts`
 --
 ALTER TABLE `fee_category_amounts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `leave_purposes`
@@ -1592,7 +1718,7 @@ ALTER TABLE `student_years`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

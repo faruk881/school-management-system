@@ -36,7 +36,7 @@
 										
 									</a>
 									<div class="info-box">
-										<h3>{{ $teacher['name'] }}</h3>
+										<h3><a href="{{ route('teacher.details',$teacher['id']) }}">{{ $teacher['name'] }}</a></h3>
 										<span class="instructor-profession">{{ $teacher['edu_qualification'] }}</span>
 										<div class="divider"></div>
 										<p>@if ($teacher['edu_qualification'] != '') {{ 'Got '.$teacher['edu_qualification'].' from '.$teacher['edu_institute'] }} @endif</p>

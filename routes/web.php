@@ -77,11 +77,14 @@ Route::get('notice', function() {
 })->name('notice');
 
 Route::get('/event/details/{id}',[SiteManagementController::class,'EventDetails'])->name('event.details');
+Route::get('/teachers/details/{id}',[SiteManagementController::class,'TeacherDetails'])->name('teacher.details');
 Route::get('/notice/details/{id}',[SiteManagementController::class,'NoticeDetails'])->name('notice.details');
 Route::get('/contact',[PublicMessageController::class,'ContactUs'])->name('contact');
 Route::post('/contact/message',[PublicMessageController::class,'ContactMessage'])->name('contact.message');
 Route::get('/publicmsg/view',[PublicMessageController::class,'PublicMessageView'])->name('public.message.view');
 Route::get('/publicmsg/read/{id}',[PublicMessageController::class,'PublicMessageRead'])->name('public.message.read');
+Route::get('/admission', [SiteManagementController::class, 'AdmissionForm'])->name('admission.form');
+Route::post('/admission/store', [SiteManagementController::class, 'AdmissionStore'])->name('admission.store');
 
 // Route::get('/class', [DefaultController::class, 'FrontendClass'])->name('class');
 
@@ -95,7 +98,10 @@ Route::get('theme/switchtheme', [ThemeSwitchController::class, 'SwitchTheme'])->
 //If try to access any url this will go to the login page
 Route::group(['middleware' => 'auth'],function(){
 
-
+    Route::get('/admission/view',[SiteManagementController::class,'AdmissionView'])->name('admission.view');
+    Route::get('/admission/approve/{id}',[SiteManagementController::class,'AdmissionApprove'])->name('admission.approve');
+    Route::get('/admission/reject/{id}',[SiteManagementController::class,'AdmissionReject'])->name('admission.reject');
+    // Route::get('/publicmsg/read/{id}',[PublicMessageController::class,'PublicMessageRead'])->name('public.message.read');
 
     // Site Management
     Route::prefix('site')->group(function() {

@@ -18,6 +18,7 @@ use App\Models\SchoolEvent;
 use App\Models\SchoolNotice;
 use App\Models\SliderImage;
 use App\Models\PrincipalMessage;
+use App\Models\AdmissionForm;
 
 use Illuminate\Support\Facades\Auth;
 use DB;
@@ -64,6 +65,13 @@ class FrontendMasterComposer
 
         $unreaded_publicmsg = PublicMessage::where('read','no')->count();
         $view->with('unreaded_publicmsg',$unreaded_publicmsg);
+        
+        $pending_admission = AdmissionForm::where('status','pending')->count();
+        $view->with('pending_admission',$pending_admission);
+
+        $not_pending_admission = AdmissionForm::count();
+        $npa =$not_pending_admission - $pending_admission;
+        $view->with('not_pending_admission',$npa);
 
         $data = EmployeeLeave::orderBy('id','desc')->get();
         $view->with('empLeave',$data);

@@ -35,7 +35,7 @@
 							data-transform_out="opacity:0;s:300;s:1000;" data-start="400">
 							<div class="sl-title">Reputed School In Bangladesh</div>
 							<p>Admission is going on</p>
-							<a href="{{ route('contact') }}" class="cws-button border-radius">Apply Now
+							<a href="{{ route('admission.form') }}" class="cws-button border-radius">Apply Now
 								<i class="fa fa-angle-double-right"></i>
 							</a>
 						</div>
