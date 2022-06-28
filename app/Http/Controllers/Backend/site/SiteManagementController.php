@@ -12,6 +12,7 @@ use App\Models\StudentClass;
 use App\Models\StudentGroup;
 use App\Models\StudentShift;
 use App\Models\AdmissionForm;
+use App\Models\Gallery;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 
@@ -253,5 +254,13 @@ class SiteManagementController extends Controller
         $af->status = 'rejected';
         $af->save();
         return redirect()->back();
+    }
+
+    public function ViewGallery() {
+
+        $data['images'] = Gallery::get();
+
+        return view('frontend.gallery',$data);
+        // return "shit";
     }
 }

@@ -85,6 +85,7 @@ return array(
     'App\\Models\\ExamType' => $baseDir . '/app/Models/ExamType.php',
     'App\\Models\\FeeCategory' => $baseDir . '/app/Models/FeeCategory.php',
     'App\\Models\\FeeCategoryAmount' => $baseDir . '/app/Models/FeeCategoryAmount.php',
+    'App\\Models\\Gallery' => $baseDir . '/app/Models/Gallery.php',
     'App\\Models\\LeavePurpose' => $baseDir . '/app/Models/LeavePurpose.php',
     'App\\Models\\MarksGrade' => $baseDir . '/app/Models/MarksGrade.php',
     'App\\Models\\PrincipalMessage' => $baseDir . '/app/Models/PrincipalMessage.php',

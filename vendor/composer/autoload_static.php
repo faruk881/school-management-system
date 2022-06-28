@@ -662,6 +662,7 @@ class ComposerStaticInita7ffa990868ad18e2175156b0a226d34
         'App\\Models\\ExamType' => __DIR__ . '/../..' . '/app/Models/ExamType.php',
         'App\\Models\\FeeCategory' => __DIR__ . '/../..' . '/app/Models/FeeCategory.php',
         'App\\Models\\FeeCategoryAmount' => __DIR__ . '/../..' . '/app/Models/FeeCategoryAmount.php',
+        'App\\Models\\Gallery' => __DIR__ . '/../..' . '/app/Models/Gallery.php',
         'App\\Models\\LeavePurpose' => __DIR__ . '/../..' . '/app/Models/LeavePurpose.php',
         'App\\Models\\MarksGrade' => __DIR__ . '/../..' . '/app/Models/MarksGrade.php',
         'App\\Models\\PrincipalMessage' => __DIR__ . '/../..' . '/app/Models/PrincipalMessage.php',

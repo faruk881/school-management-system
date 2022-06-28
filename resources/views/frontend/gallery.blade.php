@@ -5,11 +5,11 @@
 	<!-- page title -->
 	<div class="page-title">
 		<div class="grid-row">
-			<h1>@lang('site.menu_gallery')</h1>
+			<h1>Gallery</h1>
 			<nav class="bread-crumb">
-				<a href="{{URL::route('home')}}">@lang('site.menu_home')</a>
+				<a href="{{URL::route('site')}}">Home</a>
 				<i class="fa fa-long-arrow-right"></i>
-				<a href="#">@lang('site.menu_gallery')</a>
+				<a href="#">Gallery</a>
 			</nav>
 		</div>
 	</div>
@@ -23,7 +23,7 @@
 			<main>
 				<div class="isotope-container">
 					<div class="isotope-header clear-fix">
-						<h2 class="margin-none">@lang('site.gallery_title')</h2>
+						<h2 class="margin-none">Our Memories</h2>
 						{{--<div class="select-wrapper">--}}
 							{{--<select class="filter">--}}
 								{{--<option value="*" selected>All</option>--}}
@@ -42,9 +42,9 @@
 								<div class="picture">
 									<div class="hover-effect"></div>
 									<div class="link-cont">
-										<a href="{{asset('storage/gallery/'.$image->meta_value)}}" class="fancy fa fa-search"></a>
+										<a href="{{asset('upload/gallery/'.$image->name)}}" class="fancy fa fa-search"></a>
 									</div>
-									<img style="min-height: 300px;" src="{{asset('storage/gallery/'.$image->meta_value)}}" alt>
+									<img style="min-height: 300px;" src="{{asset('upload/gallery/'.$image->name)}}" alt>
 								</div>
 							</div>
 							@endforeach
@@ -52,20 +52,7 @@
 						</div>
 					</div>
 					<!-- pagination -->
-					<div class="page-pagination clear-fix">
-
-						<a title="prev"  @if($images->previousPageUrl()) href="{{$images->previousPageUrl()}}" @else href="#"  class="disabled" @endif>
-							<i class="fa fa-angle-double-left"></i>
-						</a>
-						<a href="#" class="active">
-							{{AppHelper::translateNumber($images->currentPage())}}
-						</a>
-						<a title="next" @if($images->nextPageUrl()) href="{{$images->nextPageUrl()}}" @else href="#"  class="disabled" @endif>
-							<i class="fa fa-angle-double-right"></i>
-						</a>
-
-
-					</div>
+					
 					<!-- / pagination -->
 
 				</div>

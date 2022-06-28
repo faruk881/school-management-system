@@ -63,6 +63,10 @@
 							<a href="{{ route('teacher') }}" >Teachers</a>
 						</li>
 						<li>
+							{{-- <a href="{{URL::route('site.teacher_profile')}}" >@lang('site.menu_teachers')</a> --}}
+							<a href="{{ route('gallery.view') }}" >Gallery</a>
+						</li>
+						<li>
 							<a href="{{ route('event') }}">Events</a>
 
 						</li>

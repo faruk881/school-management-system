@@ -76,6 +76,7 @@ Route::get('notice', function() {
     return view('frontend.notice');
 })->name('notice');
 
+Route::get('/gallery',[SiteManagementController::class,'ViewGallery'])->name('gallery.view');
 Route::get('/event/details/{id}',[SiteManagementController::class,'EventDetails'])->name('event.details');
 Route::get('/teachers/details/{id}',[SiteManagementController::class,'TeacherDetails'])->name('teacher.details');
 Route::get('/notice/details/{id}',[SiteManagementController::class,'NoticeDetails'])->name('notice.details');
@@ -265,6 +266,8 @@ Route::group(['middleware' => 'auth'],function(){
         Route::get('school/details/edit',[SchoolDetailsController::class,'EditDetails'])->name('school.details.edit');
         Route::post('school/details/store',[SchoolDetailsController::class,'StoreDetails'])->name('school.details.store');
         Route::get('school/details/sliderimage/add',[SchoolDetailsController::class,'SliderImageAdd'])->name('school.details.sliderimage.add');
+        Route::get('school/details/galleryimage/add',[SchoolDetailsController::class,'GalleryImageAdd'])->name('gallery.image.add');
+        Route::post('school/details/galleryimage/store',[SchoolDetailsController::class,'GalleryImageStore'])->name('gallery.image.store');
         Route::post('school/details/sliderimage/store',[SchoolDetailsController::class,'SliderImageStore'])->name('school.details.sliderimage.store');
         Route::get('school/details/principalmsg/add',[SchoolDetailsController::class,'PrincipalMsgAdd'])->name('school.details.principalmsg.add');
         Route::post('school/details/principalmsg/store',[SchoolDetailsController::class,'PrincipalMsgStore'])->name('school.details.principalmsg.store');
