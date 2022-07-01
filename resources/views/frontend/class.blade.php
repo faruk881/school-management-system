@@ -41,7 +41,7 @@
 											<div class="course-name clear-fix">
 												<span class="price">{{ $shift['name'] }}</span>
 												<h3>
-													<a href="#">{{ 'Class: '.$class['name'] }}</a>
+													<a href="{{ route('class.details',['class_details' => $class['id'], 'shift'=>$shift['id']]) }}">{{ 'Class: '.$class['name'] }}</a>
 												</h3>
 											</div>
 											<div class="course-date bg-color-1 clear-fix">

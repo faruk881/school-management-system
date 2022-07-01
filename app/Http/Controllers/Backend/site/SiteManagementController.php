@@ -13,6 +13,9 @@ use App\Models\StudentGroup;
 use App\Models\StudentShift;
 use App\Models\AdmissionForm;
 use App\Models\Gallery;
+use App\Models\AssignStudent;
+use App\Models\AssignSubject;
+use App\Models\AssignTeacherSubject;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 
@@ -261,6 +264,26 @@ class SiteManagementController extends Controller
         $data['images'] = Gallery::get();
 
         return view('frontend.gallery',$data);
-        // return "shit";
+
+    }
+
+    public function ClassDetails($class_details,$shift) {
+
+        $data['count_student'] = AssignStudent::Where('class_id',$class_details)->where('shift_id',$shift)->count();
+
+        // $shift_id = $class_shift->shift;
+        // $class_id = $class_shift->class_details;
+
+        $data['total_student'] = AssignStudent::where('class_id',$class_details)->where('shift_id',$shift)->count();
+        $data['total_teacher'] = AssignTeacherSubject::where('shift_id',$shift)->count();
+        $data['subjects'] = AssignSubject::where('class_id',$class_details)->get();
+        // $data['teachers'] = AssignTeacherSubject
+        $data['total_subject'] = AssignSubject::where('class_id',$class_details)->count();
+        // $data['shift'] = AssignStudent::Where('id',$shift)->get();
+        $data['shift'] = StudentShift::Where('id',$shift)->get();
+        $data['class_details'] = StudentClass::where('id',$class_details)->get();
+        
+        
+        return view('frontend.class_details',$data);
     }
 }

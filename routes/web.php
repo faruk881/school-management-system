@@ -77,6 +77,7 @@ Route::get('notice', function() {
 })->name('notice');
 
 Route::get('/gallery',[SiteManagementController::class,'ViewGallery'])->name('gallery.view');
+Route::get('/class/details/{class_details}{shift}/',[SiteManagementController::class,'ClassDetails'])->name('class.details');
 Route::get('/event/details/{id}',[SiteManagementController::class,'EventDetails'])->name('event.details');
 Route::get('/teachers/details/{id}',[SiteManagementController::class,'TeacherDetails'])->name('teacher.details');
 Route::get('/notice/details/{id}',[SiteManagementController::class,'NoticeDetails'])->name('notice.details');

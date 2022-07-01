@@ -5,13 +5,13 @@
 	<!-- page title -->
 	<div class="page-title">
 		<div class="grid-row">
-			<h1>@lang('site.details')</h1>
+			<h1>Class Details</h1>
 			<nav class="bread-crumb">
-				<a href="{{URL::route('home')}}">@lang('site.menu_home')</a>
+				<a href="{{URL::route('site')}}">Home</a>
 				<i class="fa fa-long-arrow-right"></i>
-				<a href="{{URL::route('site.class_profile')}}">@lang('site.menu_class')</a>
+				<a href="{{URL::route('class')}}">Class</a>
 				<i class="fa fa-long-arrow-right"></i>
-				<a href="#">@lang('site.details')</a>
+				<a href="#">Class Details</a>
 			</nav>
 		</div>
 	</div>
@@ -27,13 +27,14 @@
 					<!-- main content -->
 					<main>
 						<section>
-							<h2>{{$profile->name}}</h2>
+							{{-- <h2>Class: {{$class_details[0]['name']}}</h2> --}}
+							{{-- <h2>{{$shift[0]['name']}}</h2> --}}
 							<div class="picture">
 								<div class="hover-effect"></div>
 								<div class="link-cont">
-									<a href="{{asset('storage/class_profile/'.$profile->image_lg)}}" class="fancy fa fa-search"></a>
+									<a href="{{asset('/upload/school_cover.jpg')}}" class="fancy fa fa-search"></a>
 								</div>
-								<img src="{{asset('storage/class_profile/'.$profile->image_lg)}}"  alt>
+								<img src="{{asset('/upload/school_cover.jpg')}}"  alt>
 							</div>
 						</section>
 					</main>
@@ -43,9 +44,9 @@
 				<div class="grid-col grid-col-3 sidebar">
 					<!-- widget -->
 					<aside class="widget-course-details">
-						<h2>@lang('site.information')</h2>
+						<h2>Information</h2>
 						<p>
-							{{$profile->short_description}}
+						
 						</p>
 					</aside>
 					<!-- / widget -->
@@ -53,44 +54,67 @@
 					<!-- banner -->
 					<div class="banner-offer icon-right bg-color-1">
 						<div class="banner-icon">
-							<i class="sms-icon-person"></i>
+							<i class="fa fa-book"></i>
 						</div>
 						<div class="banner-text">
-							<h4>@lang('site.teacher')</h4>
-							<p>{{$profile->teacher}}</p>
+							<h4>{{ $shift[0]['name'] }}</h4>
 						</div>
 					</div>
 					<!-- / banner -->
 					<!-- banner -->
 					<div class="banner-offer icon-right bg-color-2">
 						<div class="banner-icon">
+							<i class="fa fa-book"></i>
+						</div>
+						<div class="banner-text">
+							<h4>Class: {{ $class_details[0]['name'] }}</h4>
+							{{-- <p>{{ $total_student }}</p> --}}
+						</div>
+					</div>
+					<!-- / banner -->
+					<!-- banner -->
+					<div class="banner-offer icon-right bg-color-1">
+						<div class="banner-icon">
+							<i class="sms-icon-person"></i>
+						</div>
+						<div class="banner-text">
+							<h4>Total Student</h4>
+							<p>{{ $total_student }}</p>
+						</div>
+					</div>
+					<!-- / banner -->
+					<!-- banner -->
+					{{-- <div class="banner-offer icon-right bg-color-2">
+						<div class="banner-icon">
 							<i class="fa fa-institution"></i>
 						</div>
 						<div class="banner-text">
-							<h4>@lang('site.room_no')</h4>
-							<p>{{$profile->room_no}}</p>
+							<h4>Room No</h4>
+							<p>60</p>
 						</div>
-					</div>
+					</div> --}}
 					<!-- / banner -->
 					<!-- banner -->
 					<div class="banner-offer icon-right bg-color-3">
 						<div class="banner-icon">
 							<i class="fa fa-users"></i>
+							{{-- <i class="fa fa-book-open-cover"></i> --}}
 						</div>
 						<div class="banner-text">
-							<h4>@lang('site.capacity')</h4>
-							<p>{{$profile->capacity}}</p>
+							<h4>Total Teacher</h4>
+							<p>{{ $total_teacher }}</p>
 						</div>
 					</div>
 					<!-- / banner -->
 					<!-- banner -->
 					<div class="banner-offer icon-right bg-color-4">
 						<div class="banner-icon">
-							<i class="fa fa-clock-o"></i>
+							<i class="fa fa-book"></i>
 						</div>
 						<div class="banner-text">
-							<h4>@lang('site.description')</h4>
-							<p>{{$profile->shift}}</p>
+							<h4>Total Subject</h4>
+							<p>{{ $total_subject }}</p>
+							
 						</div>
 					</div>
 					<!-- / banner -->
@@ -106,19 +130,42 @@
 							<!-- tabs -->
 							<div class="tabs">
 								<div class="block-tabs-btn clear-fix">
-									<div class="tabs-btn active" data-tabs-id="tabs1">@lang('site.description')</div>
-									<div class="tabs-btn" data-tabs-id="tabs2">@lang('site.course_outline')</div>
+									<div class="tabs-btn active" data-tabs-id="tabs1">Subjects</div>
+									<div class="tabs-btn" data-tabs-id="tabs2">Teachers</div>
 								</div>
 								<!-- tabs keeper -->
 								<div class="tabs-keeper">
 									<!-- tabs container -->
 									<div class="container-tabs active" data-tabs-id="cont-tabs1">
-										{!! $profile->description !!}
+										{{-- {{ $subject[0]['name'] }} --}}
+										@foreach ($subjects as $subject)
+										<div class="banner-offer icon-right bg-color-4">
+											{{-- <div class="banner-icon">
+											<i class="fa fa-book"></i>
+											</div> --}}
+											<div class="banner-text">
+												<h6>{{ $subject->school_subject->name }}</h6>
+											</div>
+										</div>
+										<!-- / banner -->
+						
+										@endforeach
 									</div>
 									<!--/tabs container -->
 									<!-- tabs container -->
 									<div class="container-tabs" data-tabs-id="cont-tabs2">
-										{!! $profile->outline !!}
+										@foreach ($subjects as $subject)
+										<div class="banner-offer icon-right bg-color-4">
+											{{-- <div class="banner-icon">
+											<i class="fa fa-book"></i>
+											</div> --}}
+											<div class="banner-text">
+												<h6>{{ $subject->school_subject->name }}</h6>
+											</div>
+										</div>
+										<!-- / banner -->
+						
+										@endforeach
 									</div>
 									<!--/tabs container -->
 								</div>
