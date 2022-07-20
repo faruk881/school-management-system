@@ -46,6 +46,7 @@
 														</tr>   				
 													</thead>
 													<tbody>
+														
 														@foreach($students as $key => $student)		
 														<tr id="{{$student->student_id}}" class="text-center">
 															<input type="hidden" name="student_id[]" value="{{ $student->student_id }}">

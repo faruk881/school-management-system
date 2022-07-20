@@ -62,6 +62,17 @@
 					</div>
 					<!-- / banner -->
 					<!-- banner -->
+					<div class="banner-offer icon-right bg-color-1">
+						<div class="banner-icon">
+							<i class="fa fa-clock-o"></i>
+						</div>
+						<div class="banner-text">
+							<h4>Class Time</h4>
+							<h4> {{ $shift[0]['class_time'] }}</h4>
+						</div>
+					</div>
+					<!-- / banner -->
+					<!-- banner -->
 					<div class="banner-offer icon-right bg-color-2">
 						<div class="banner-icon">
 							<i class="fa fa-book"></i>
