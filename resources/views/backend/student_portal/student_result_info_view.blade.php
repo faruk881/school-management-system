@@ -10,7 +10,7 @@
 				<div class="col-12">
 					<div class="box bb-3 border-warning">
 						<div class="box-header">
-							<h4 class="box-title">Manage <strong>MarkSheet Generate</strong></h4>
+							<h4 class="box-title">Student Result</h4>
 						</div>
 						<div class="box-body">
 							<form method="GET" action="{{ route('student.result.info') }}">

@@ -84,15 +84,15 @@
 					</div>
 					<!-- / banner -->
 					<!-- banner -->
-					{{-- <div class="banner-offer icon-right bg-color-2">
-						<div class="banner-icon">
-							<i class="fa fa-institution"></i>
-						</div>
-						<div class="banner-text">
-							<h4>Room No</h4>
-							<p>60</p>
-						</div>
-					</div> --}}
+						{{-- <div class="banner-offer icon-right bg-color-2">
+							<div class="banner-icon">
+								<i class="fa fa-institution"></i>
+							</div>
+							<div class="banner-text">
+								<h4>Room No</h4>
+								<p>60</p>
+							</div>
+						</div> --}}
 					<!-- / banner -->
 					<!-- banner -->
 					<div class="banner-offer icon-right bg-color-3">
@@ -130,12 +130,13 @@
 							<!-- tabs -->
 							<div class="tabs">
 								<div class="block-tabs-btn clear-fix">
-									<div class="tabs-btn active" data-tabs-id="tabs1">Subjects</div>
-									<div class="tabs-btn" data-tabs-id="tabs2">Teachers</div>
+									<div class="tabs-btn active" data-tabs-id="tabs1">Teachers And Subjects</div>
+									{{-- <div class="tabs-btn" data-tabs-id="tabs2">Teachers</div> --}}
 								</div>
 								<!-- tabs keeper -->
 								<div class="tabs-keeper">
 									<!-- tabs container -->
+									
 									<div class="container-tabs active" data-tabs-id="cont-tabs1">
 										{{-- {{ $subject[0]['name'] }} --}}
 										@foreach ($subjects as $subject)
@@ -144,7 +145,20 @@
 											<i class="fa fa-book"></i>
 											</div> --}}
 											<div class="banner-text">
-												<h6>{{ $subject->school_subject->name }}</h6>
+												@php
+													$teacher = App\Models\assignTeacherSubject::where('shift_id',$shift[0]['id'])->where('subject_id',$subject->school_subject->id)->with('teachers')->distinct()->get();
+													// $teacher = App\Models\assignTeacherSubject::get();
+												@endphp
+												
+												@foreach ($teacher as $t )
+												@if ($t)
+														
+													
+												<h6>{{ $subject->school_subject->name }} | 
+													<a href="{{ route('teacher.details',$t->teachers->id) }}">{{ $t->teachers->name }}</a>	
+												</h6>
+												@endif
+												@endforeach
 											</div>
 										</div>
 										<!-- / banner -->
@@ -152,22 +166,7 @@
 										@endforeach
 									</div>
 									<!--/tabs container -->
-									<!-- tabs container -->
-									<div class="container-tabs" data-tabs-id="cont-tabs2">
-										@foreach ($subjects as $subject)
-										<div class="banner-offer icon-right bg-color-4">
-											{{-- <div class="banner-icon">
-											<i class="fa fa-book"></i>
-											</div> --}}
-											<div class="banner-text">
-												<h6>{{ $subject->school_subject->name }}</h6>
-											</div>
-										</div>
-										<!-- / banner -->
-						
-										@endforeach
-									</div>
-									<!--/tabs container -->
+									
 								</div>
 								<!--/tabs keeper -->
 							</div>

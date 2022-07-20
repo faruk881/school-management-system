@@ -86,18 +86,7 @@ class SchoolDetailsController extends Controller
         return view('backend.setup.school_details.add_sliderimage',$data);
 
     }
-    public function GalleryImageAdd() {
-        
-        $data['image1'] = Gallery::where('serial',1)->get('name')->first();
-        $data['image2'] = Gallery::where('serial',2)->get('name')->first();
-        $data['image3'] = Gallery::where('serial',3)->get('name')->first();
-        $data['image4'] = Gallery::where('serial',4)->get('name')->first();
-        $data['image5'] = Gallery::where('serial',5)->get('name')->first();
-        $data['image6'] = Gallery::where('serial',6)->get('name')->first();
 
-        return view('backend.setup.school_details.gallery',$data);
-
-    }
 
     public function SliderImageStore(Request $request) {
         
@@ -170,78 +159,47 @@ class SchoolDetailsController extends Controller
 
         return redirect()->route('school.details.sliderimage.add');
     }
-    public function GalleryImageStore(Request $request) {
-        
-        if ($request->file('image1')) {
 
-            Gallery::where('serial',1)->delete();
-            $sliderimage = new Gallery();
-    		$file = $request->file('image1');
-    		$filename = 'slider_image1.'.$file->extension();
-    		$file->move(public_path('upload/gallery'),$filename);
-    		$sliderimage['name'] = $filename;
-            $sliderimage['serial'] = 1;
-            $sliderimage->save();
-    	}
-        if ($request->file('image2')) {
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////Gallery///////////////////////////////////////////////////////////
 
-            SliderImage::where('serial',2)->delete();
-            $sliderimage = new Gallery();
-    		$file = $request->file('image2');
-    		$filename = 'slider_image2.'.$file->extension();
-    		$file->move(public_path('upload/gallery'),$filename);
-    		$sliderimage['name'] = $filename;
-            $sliderimage['serial'] = 2;
-            $sliderimage->save();
-    	}
-        if ($request->file('image3')) {
 
-            Gallery::where('serial',3)->delete();
-            $sliderimage = new Gallery();
-    		$file = $request->file('image3');
-    		$filename = 'slider_image3.'.$file->extension();
-    		$file->move(public_path('upload/gallery'),$filename);
-    		$sliderimage['name'] = $filename;
-            $sliderimage['serial'] = 3;
-            $sliderimage->save();
-    	}
-        if ($request->file('image4')) {
 
-            Gallery::where('serial',4)->delete();
-            $sliderimage = new Gallery();
-    		$file = $request->file('image4');
-    		$filename = 'slider_image4.'.$file->extension();
-    		$file->move(public_path('upload/gallery'),$filename);
-    		$sliderimage['name'] = $filename;
-            $sliderimage['serial'] = 4;
-            $sliderimage->save();
-    	}
-        if ($request->file('image5')) {
+    public function GalleryView() {
+        $data['gallery'] = Gallery::get();
 
-            Gallery::where('serial',5)->delete();
-            $sliderimage = new Gallery();
-    		$file = $request->file('image5');
-    		$filename = 'slider_image5.'.$file->extension();
-    		$file->move(public_path('upload/gallery'),$filename);
-    		$sliderimage['name'] = $filename;
-            $sliderimage['serial'] = 5;
-            $sliderimage->save();
-    	}
-        if ($request->file('image6')) {
-
-            Gallery::where('serial',6)->delete();
-            $sliderimage = new Gallery();
-    		$file = $request->file('image6');
-    		$filename = 'slider_image6.'.$file->extension();
-    		$file->move(public_path('upload/gallery'),$filename);
-    		$sliderimage['name'] = $filename;
-            $sliderimage['serial'] = 6;
-            $sliderimage->save();
-    	}
-
-        return redirect()->back();
+        return view('backend.setup.school_details.gallery_view',$data);
     }
 
+    public function GalleryImageAdd() {
+        return view('backend.setup.school_details.gallery_add');
+    }
+
+    public function GalleryImageStore(Request $request) {
+
+        $galleryimage = new Gallery();
+        $file = $request->file('image1');
+        $filename = rand(00000,99999).'.'.$file->extension();
+        $file->move(public_path('upload/gallery'),$filename);
+        $galleryimage['name'] = $filename;
+        $galleryimage['description'] = $request->description;
+        $galleryimage->save();
+        return redirect()->route('gallery.image.view');
+    }
+
+    public function GalleryImageDelete($id) {
+        $gallery = Gallery::find($id);
+        $gallery->delete();
+        return redirect()->back();
+    }
+    public function GalleryImageEdit($id) {
+        $data['gallery'] = Gallery::find($id);
+        return view('backend.setup.school_details.gallery_edit',$data);
+    }
+
+
+    ///////////////////////////////////End of gallery function////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public function PrincipalMsgAdd() {
 
         $data['pm'] = PrincipalMessage::all();

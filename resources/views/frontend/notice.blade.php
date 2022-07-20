@@ -33,7 +33,7 @@
 								{{-- <div class="content-title active">{{ $notice['notice_name'] }}</div> --}}
 							
 									
-									<a href="{{ route('notice.details',$notice->id) }}"><strong class="fs-18"> {{ $key+1 }}.</strong> {{  $notice['notice_name'] }}. Date {{ date('d-M-y',strtotime($notice['notice_date'])) }} <br><br>
+									<h6><strong class="fs-18"> {{ $key+1 }}.</strong> {{  $notice['notice_name'] }} | Date {{ date('d-M-y',strtotime($notice['notice_date'])) }} | <a style="color: #ffb703" href="{{ route('notice.details',$notice->id) }}">View Notice</a> | <a style="color: #ffb703" href="{{ asset('upload/notice_pdf'.'/'.$notice->notice_pdf) }}" target="_blank">Click here to download notice pdf </a></h6>
 								
 								<!--/content-title -->
 								<!-- accordions content -->

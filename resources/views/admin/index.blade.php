@@ -181,8 +181,8 @@
                                     </div>
                                     
                                     <div>                      
-                                        <p class="text-mute mt-20 mb-0 font-size-16"><a href="{{ route('public.message.view') }}">{{ $subject->assigned_subject->name }}</a></p>
-                                        <h3 class="text-white mb-0 font-weight-500"><a href="{{ route('employee.registration.view') }}">{{ $subject->school_shift->name }}</a></h3>
+                                        <p class="text-mute mt-20 mb-0 font-size-16"><a href="#">{{ $subject->assigned_subject->name }}</a></p>
+                                        <h3 class="text-white mb-0 font-weight-500"><a href="#">{{ $subject->school_shift->name }}</a></h3>
                                     </div>
                                 </div>
                             </div>

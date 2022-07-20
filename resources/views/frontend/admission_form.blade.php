@@ -62,6 +62,13 @@
 
 								<h5>Date of birth</h5>
 								<input type="date" name="dob" aria-invalid="false" aria-required="true"><br>
+
+								<h5>Profile Photo</h5>
+								<input type="file" name="profile_photo" aria-invalid="false" aria-required="true"><br>
+								
+								<h5>Upload Previous all Educational Certificate pdf format</h5>
+								<p>You can use adobe scan to create single pdf with multiple certificate</p>
+								<input type="file" accept="application/pdf" name="student_document" aria-invalid="false" aria-required="true"><br>
 								
 								
 								

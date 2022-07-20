@@ -14,7 +14,7 @@
 				<div class="box-body">
 					<div class="row">
 						<div class="col">
-							<form method="post" action="{{ route('store.student.registration') }}" enctype="multipart/form-data">
+							<form method="post" action="{{ route('store.admission.student.registration') }}" enctype="multipart/form-data">
 								@csrf
 								<div class="row">
 									<div class="col-12">	
@@ -24,6 +24,7 @@
 													<h5>Student Name <span class="text-danger">*</span></h5>
 													<div class="controls">
 														<input type="text" name="name" value="{{ $ai['name'] }}"  class="form-control" required="" > 
+														<input type="text" name="admission_id" value="{{ $admission_id }}" hidden  class="form-control" required="" > 
 													</div>		 
 												</div>
 											</div> <!-- End Col md 4 -->
@@ -100,7 +101,7 @@
 												<div class="form-group">
 													<h5>Registration Date <span class="text-danger">*</span></h5>
 													<div class="controls">
-														<input type="date" name="join_date" value="{{ $ai['created_at'] }}" class="form-control" required="" > 
+														<input type="date" value="{{ Carbon\Carbon::now()->format('Y-m-d') }}" name="join_date" value="{{ $ai['created_at'] }}" class="form-control" required="" > 
 													</div>
 												</div>
 											</div> <!-- End Col md 4 -->
@@ -179,7 +180,9 @@
 											<div class="col-md-4">
 												<div class="form-group">
 													<h5>Profile Image <span class="text-danger">*</span></h5>
+													{{-- <h5>{{ asset('upload/admission_student_images').'/'.$ai->image }} <span class="text-danger">*</span></h5> --}}
 													<div class="controls">
+														{{-- <input type="file" name="image" value="{{ asset('upload/admission_student_images').'/'.$ai->image }}" class="form-control" id="image" > --}}
 														<input type="file" name="image" class="form-control" id="image" >
 													</div>
 												</div>
@@ -187,7 +190,7 @@
 											<div class="col-md-4">
 												<div class="form-group">
 													<div class="controls">
-														<img id="showImage" src="{{ url('upload/no_image.jpg') }}" style="width: 100px; width: 100px; border: 1px solid #000000;"> 
+														<img id="showImage" src="{{ asset('upload/admission_student_images').'/'.$ai->image }}" style="width: 100px; width: 100px; border: 1px solid #000000;"> 
 													</div>
 												</div>
 											</div> <!-- End Col md 4 --> 

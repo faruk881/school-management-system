@@ -44,8 +44,10 @@
 									<div class="link-cont">
 										<a href="{{asset('upload/gallery/'.$image->name)}}" class="fancy fa fa-search"></a>
 									</div>
-									<img style="min-height: 300px;" src="{{asset('upload/gallery/'.$image->name)}}" alt>
+									<img style="height: 300px; width: 400px" src="{{asset('upload/gallery/'.$image->name)}}" alt>
 								</div>
+							<p>{{ $image->description }}</p>
+
 							</div>
 							@endforeach
 

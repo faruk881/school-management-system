@@ -25,6 +25,10 @@
 												<input type="text" name="notice_name" value="{{ $noticeData[0]['notice_name'] }}" required class="form-control" > 		
 											</div>
 											
+											<h5>Notice PDF</h5>
+											<div class="controls">
+											<input type="file" accept="application/pdf" name="notice_pdf" aria-invalid="false" aria-required="true"><br>
+											</div>
 		
 									   
 									 

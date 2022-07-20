@@ -37,6 +37,10 @@
 										{{ date('d-M-y',strtotime($singleNotice[0]['notice_date'])) }}
 									</div>
 								</div>
+								<div class="date-post" style="background-color: #d90429;">
+									
+									<div class="text"><a href="{{ asset('upload/notice_pdf'.'/'.$singleNotice[0]['notice_pdf']) }}" target="_blank">Download notice pdf</a></div>
+								</div>
 
 							</div>
 					

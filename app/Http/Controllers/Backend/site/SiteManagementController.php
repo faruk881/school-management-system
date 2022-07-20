@@ -127,6 +127,12 @@ class SiteManagementController extends Controller
         $school_notice->notice_name = $request->notice_name;
         $school_notice->notice_date = Carbon::now()->format('y-m-d');
         $school_notice->notice_description = $request->notice_description;
+
+        $file = $request->file('notice_pdf');
+        $filename = rand(00000,99999).'.'.$file->extension();
+        $file->move(public_path('upload/notice_pdf'),$filename);
+        $school_notice->notice_pdf = $filename;
+
         $school_notice->created_by_user_id = auth()->user()->id;
       
 
@@ -160,6 +166,15 @@ class SiteManagementController extends Controller
         // $school_notice->notice_date = $request->notice_date;
        
         $school_notice->notice_description = $request->notice_description;
+
+        if($request->file('notice_pdf')) {
+            unlink(public_path('upload/notice_pdf').'/'.$school_notice->notice_pdf);
+            $file = $request->file('notice_pdf');
+            $filename = rand(00000,99999).'.'.$file->extension();
+            $file->move(public_path('upload/notice_pdf'),$filename);
+            $school_notice->notice_pdf = $filename;
+        }
+
         $school_notice->updated_by_user_id = auth()->user()->id;
       
 
@@ -177,6 +192,7 @@ class SiteManagementController extends Controller
 
     public function DeleteNotice($id) {
         $notice = SchoolNotice::find($id);
+        unlink(public_path('upload/notice_pdf').'/'.$notice->notice_pdf);
         $notice->delete();
 
         return redirect()->route('site.notice.view');
@@ -219,6 +235,17 @@ class SiteManagementController extends Controller
         $af->mname = $request->mname;
         $af->religion = $request->religion;
         $af->dob = $request->dob;
+
+        $file = $request->file('profile_photo');
+        $filename = rand(00000,99999).'.'.$file->extension();
+        $file->move(public_path('upload/admission_student_images'),$filename);
+        $af['image'] = $filename;
+        
+        $file2 = $request->file('student_document');
+        $filename2 = rand(00000,99999).'.'.$file2->extension();
+        $file2->move(public_path('upload/student_document'),$filename2);
+        $af['student_document'] = $filename2;
+        
         $af->class_id = $request->class_id;
         $af->group_id = $request->group_id;
         $af->shift_id = $request->shift_id;
@@ -235,11 +262,9 @@ class SiteManagementController extends Controller
 
     public function AdmissionApprove($id){
 
-        $af = AdmissionForm::find($id);
-        $af->action_by = Auth()->user()->name;
-        $af->status = 'approved';
-        $af->save();
 
+
+        $data['admission_id'] = $id;
         $data['ai'] = AdmissionForm::find($id);
         $data['years'] = StudentYear::get();
         $data['classes'] = StudentClass::get();
@@ -274,9 +299,19 @@ class SiteManagementController extends Controller
         // $shift_id = $class_shift->shift;
         // $class_id = $class_shift->class_details;
 
+    
+
         $data['total_student'] = AssignStudent::where('class_id',$class_details)->where('shift_id',$shift)->count();
         $data['total_teacher'] = AssignTeacherSubject::where('shift_id',$shift)->count();
-        $data['subjects'] = AssignSubject::where('class_id',$class_details)->get();
+        $data['total_teacher'] = AssignTeacherSubject::where('shift_id',$shift)->count();
+        $data['subjects'] =  AssignSubject::where('class_id',$class_details)->get();
+
+        // $teacher = 
+
+        // foreach($sub as $subject){
+        //     $teacher = AssignTeacherSubject::where('subject_id', $sub->id);
+        // }
+
         // $data['teachers'] = AssignTeacherSubject
         $data['total_subject'] = AssignSubject::where('class_id',$class_details)->count();
         // $data['shift'] = AssignStudent::Where('id',$shift)->get();

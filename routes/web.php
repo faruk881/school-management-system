@@ -88,6 +88,7 @@ Route::get('/publicmsg/read/{id}',[PublicMessageController::class,'PublicMessage
 Route::get('/admission', [SiteManagementController::class, 'AdmissionForm'])->name('admission.form');
 Route::post('/admission/store', [SiteManagementController::class, 'AdmissionStore'])->name('admission.store');
 
+
 // Route::get('/class', [DefaultController::class, 'FrontendClass'])->name('class');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
@@ -103,6 +104,7 @@ Route::group(['middleware' => 'auth'],function(){
     Route::get('/admission/view',[SiteManagementController::class,'AdmissionView'])->name('admission.view');
     Route::get('/admission/approve/{id}',[SiteManagementController::class,'AdmissionApprove'])->name('admission.approve');
     Route::get('/admission/reject/{id}',[SiteManagementController::class,'AdmissionReject'])->name('admission.reject');
+    Route::post('/admission/student/store', [StudentRegController::class, 'StudentAdmissionRegStore'])->name('store.admission.student.registration');
     // Route::get('/publicmsg/read/{id}',[PublicMessageController::class,'PublicMessageRead'])->name('public.message.read');
 
     // Site Management
@@ -268,7 +270,10 @@ Route::group(['middleware' => 'auth'],function(){
         Route::post('school/details/store',[SchoolDetailsController::class,'StoreDetails'])->name('school.details.store');
         Route::get('school/details/sliderimage/add',[SchoolDetailsController::class,'SliderImageAdd'])->name('school.details.sliderimage.add');
         Route::get('school/details/galleryimage/add',[SchoolDetailsController::class,'GalleryImageAdd'])->name('gallery.image.add');
+        Route::get('school/details/galleryimage/view',[SchoolDetailsController::class,'GalleryView'])->name('gallery.image.view');
         Route::post('school/details/galleryimage/store',[SchoolDetailsController::class,'GalleryImageStore'])->name('gallery.image.store');
+        Route::get('school/details/galleryimage/delete/{id}',[SchoolDetailsController::class,'GalleryImageDelete'])->name('gallery.image.delete');
+        Route::get('school/details/galleryimage/edit/{id}',[SchoolDetailsController::class,'GalleryImageEdit'])->name('gallery.image.edit');
         Route::post('school/details/sliderimage/store',[SchoolDetailsController::class,'SliderImageStore'])->name('school.details.sliderimage.store');
         Route::get('school/details/principalmsg/add',[SchoolDetailsController::class,'PrincipalMsgAdd'])->name('school.details.principalmsg.add');
         Route::post('school/details/principalmsg/store',[SchoolDetailsController::class,'PrincipalMsgStore'])->name('school.details.principalmsg.store');

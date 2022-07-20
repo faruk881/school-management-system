@@ -206,7 +206,7 @@
           <ul class="treeview-menu">
             @if(Auth::user()->usertype == 'Admin')
             <li class="{{ ($route == 'school.details.view')?'active':'' }}"><a href="{{ route('school.details.view') }}"><i class="ti-more"></i>School Details</a></li>
-            <li class="{{ ($route == 'gallery.image.add')?'active':'' }}"><a href="{{ route('gallery.image.add') }}"><i class="ti-more"></i>Gallery Image</a></li>
+            <li class="{{ ($route == 'gallery.image.view')?'active':'' }}"><a href="{{ route('gallery.image.view') }}"><i class="ti-more"></i>Gallery</a></li>
             @endif
             <li class="{{ ($route == 'site.event.view')?'active':'' }}"><a href="{{ route('site.event.view') }}"><i class="ti-more"></i>Events</a></li>
             <li class="{{ ($route == 'site.notice.view')?'active':'' }}"><a href="{{ route('site.notice.view') }}"><i class="ti-more"></i>Notice</a></li>
