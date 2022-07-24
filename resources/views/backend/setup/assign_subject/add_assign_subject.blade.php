@@ -30,6 +30,17 @@
 													</select>
 												</div>
 											</div> <!-- // end form group -->
+											<div class="form-group">
+												<h5>Group <span class="text-danger">*</span></h5>
+												<div class="controls">
+													<select name="group_id" required="" class="form-control">
+														<option value="" selected="" disabled="">Select Group</option>
+														@foreach($groups as $group)
+														<option value="{{ $group->id }}">{{ $group->name }}</option>
+														@endforeach	 
+													</select>
+												</div>
+											</div> <!-- // end form group -->
 											<div class="row">
 												<div class="col-md-4">
 													<div class="form-group">

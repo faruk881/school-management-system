@@ -15,7 +15,7 @@
                 <div class="box-body">
                     <div class="row">
                         <div class="col">
-                            <form method="post" action="{{ route('gallery.image.store') }} " enctype="multipart/form-data">
+                            <form method="post" action="{{ route('gallery.image.update') }} " enctype="multipart/form-data">
                                 @csrf
                                 <div class="add_item">
                                     <div class="row">
@@ -24,6 +24,7 @@
                                             <div class="form-group">
                                                 <h5>Choose Image<span class="text-danger">*</span></h5>
 												<input type="file" name="image1" class="form-control" id="image1" > 
+												<input type="text" name="g_id" hidden value="{{ $id }}" class="form-control" id="image1" > 
 
                                                 <div class="controls">
                                                   

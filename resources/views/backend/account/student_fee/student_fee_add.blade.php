@@ -78,7 +78,8 @@
 										<script id="document-template" type="text/x-handlebars-template">
 											<form action="{{ route('account.fee.store') }}" method="post" >
 												@csrf
-												<table class="table table-bordered table-striped" style="width: 100%">
+												<div class="table-responsive">
+												<table id="example1" class="table table-bordered table-striped" style="width: 100%">
 													<thead>
 														<tr>
 															@{{{thsource}}}
@@ -92,6 +93,7 @@
 														@{{/each}}
 													</tbody>
 												</table>
+												</div>
 												<button type="submit" class="btn btn-primary" style="margin-top: 10px">Submit</button>
 											</form>
 										</script>

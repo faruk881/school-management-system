@@ -176,15 +176,31 @@ class SchoolDetailsController extends Controller
     }
 
     public function GalleryImageStore(Request $request) {
-
         $galleryimage = new Gallery();
-        $file = $request->file('image1');
-        $filename = rand(00000,99999).'.'.$file->extension();
-        $file->move(public_path('upload/gallery'),$filename);
-        $galleryimage['name'] = $filename;
+            $file = $request->file('image1');
+            $filename = rand(00000,99999).'.'.$file->extension();
+            $file->move(public_path('upload/gallery'),$filename);
+            $galleryimage['name'] = $filename;
         $galleryimage['description'] = $request->description;
         $galleryimage->save();
         return redirect()->route('gallery.image.view');
+    }
+    public function GalleryImageUpdate(Request $request) {
+        $galleryimage = Gallery::find($request->g_id);
+
+        if ($request->file('image1')) {
+            $file = $request->file('image1');
+            $filename = rand(00000,99999).'.'.$file->extension();
+            $file->move(public_path('upload/gallery'),$filename);
+            $galleryimage['name'] = $filename;
+        }
+            
+        $galleryimage['description'] = $request->description;
+        $galleryimage->save();
+        
+
+        return redirect()->route('gallery.image.view');
+        
     }
 
     public function GalleryImageDelete($id) {
@@ -194,6 +210,7 @@ class SchoolDetailsController extends Controller
     }
     public function GalleryImageEdit($id) {
         $data['gallery'] = Gallery::find($id);
+        $data['id'] = $id;
         return view('backend.setup.school_details.gallery_edit',$data);
     }
 

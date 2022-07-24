@@ -66,7 +66,7 @@
 
    	<tr id="div{{$data->id}}" class="text-center">
    		<input type="hidden" name="student_id[]" value="{{ $data->student_id }}">
-		   <input type="hidden" name="student_school_id[]" value="{{ $student->student_school_id }}">
+		   <input type="hidden" name="student_school_id[]" value="{{ $data->student_school_id }}">
 		 <td>{{ $key+1  }}</td>
 		<td>{{ $data->student->name }}</td>
 		<td>{{ $data->student->id_no }}</td>

@@ -106,6 +106,7 @@ class StudentRegController extends Controller
 			$user->address = $request->address;
 			$user->gender = $request->gender;
 			$user->religion = $request->religion;
+			$user->id_document_no = $request->id_document_no;
 			$user->dob = date('Y-m-d',strtotime($request->dob));
 
 			if ($request->file('image')) {
@@ -187,7 +188,7 @@ class StudentRegController extends Controller
 			$user->gender = $request->gender;
 			$user->religion = $request->religion;
 			$user->dob = date('Y-m-d',strtotime($request->dob));
-
+			$user->id_document_no = $request->id_document_no;
 			if ($request->file('image')) {
 				$file = $request->file('image');
 				$filename = date('YmdHi').$file->getClientOriginalName();

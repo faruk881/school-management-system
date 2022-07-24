@@ -61,6 +61,9 @@ class StudentFeeControllerViewStudentFee extends Controller
 		if($fee_category_id == 2) {
             $html['thsource'] .= '<th>Discount </th>';
         }
+		if($fee_category_id == 1) {
+			$html['thsource'] .= '<th>Registration Fee </th>';
+		}
 		// $html['thsource'] .= '<th>Year</th>';			
 		// $html['thsource'] .= '<th>Class</th>';
 		// $html['thsource'] .= '<th>Fee Type</th>';
@@ -116,6 +119,9 @@ class StudentFeeControllerViewStudentFee extends Controller
 
             //Total Paid amount
             //Total Registration Fee paid
+            if($fee_category_id == 1) {
+                $html[$key]['tdsource'] .= '<td>' . $fee->amount . '</td>';
+            }
             if($fee_category_id == 1) {
                 $html[$key]['tdsource'] .= '<td>' . $std['student']['total_registration_fee_paid'] . '</td>';
             }

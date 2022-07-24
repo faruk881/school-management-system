@@ -60,11 +60,14 @@
 								<option value="Christan">Christan</option>
 								</select><br>
 
+								<input type="text" name="id_document_no" value="" size="40" placeholder="Nid/Birth Registration No" aria-invalid="false" aria-required="true">
+
+
 								<h5>Date of birth</h5>
 								<input type="date" name="dob" aria-invalid="false" aria-required="true"><br>
 
 								<h5>Profile Photo</h5>
-								<input type="file" name="profile_photo" aria-invalid="false" aria-required="true"><br>
+								<input type="file" accept="image/png, image/gif, image/jpeg, image/jpg" name="profile_photo" aria-invalid="false" aria-required="true"><br>
 								
 								<h5>Upload Previous all Educational Certificate pdf format</h5>
 								<p>You can use adobe scan to create single pdf with multiple certificate</p>
@@ -94,7 +97,7 @@
 										@endforeach
 								</select><br>
 						
-								<button type="submit" class="cws-button border-radius alt">Send</button>
+								<button type="submit" class="cws-button border-radius alt">Submit</button>
 								{{-- <button type="submit" class="btn btn-primary">Submit</button> --}}
 							</form>
 							<!--/contact-form -->

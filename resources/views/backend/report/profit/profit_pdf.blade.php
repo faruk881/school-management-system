@@ -38,7 +38,7 @@
     </h2></td>
     <td><h2>{{ $school_details[0]['school_name'] }}</h2>
 <p>{{ $school_details[0]['school_address'] }}</p>
-<p> <b> Monthly and Yearly Profit </b> </p>
+<p> <b> Monthly and Yearly Revenue </b> </p>
 
     </td> 
   </tr>

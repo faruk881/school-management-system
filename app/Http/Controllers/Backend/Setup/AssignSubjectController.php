@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\SchoolSubject;
 use App\Models\StudentClass; 
 use App\Models\AssignSubject;
+use App\Models\StudentGroup;
 use App\Models\StudentShift;
 
 class AssignSubjectController extends Controller
@@ -21,6 +22,7 @@ class AssignSubjectController extends Controller
      public function AddAssignSubject(){
     	$data['subjects'] = SchoolSubject::all();
     	$data['classes'] = StudentClass::all();
+		$data['groups'] = StudentGroup::all();
     	return view('backend.setup.assign_subject.add_assign_subject',$data);
     }
 
@@ -31,8 +33,10 @@ class AssignSubjectController extends Controller
 	    	if ($subjectCount !=NULL) {
 	    		for ($i=0; $i <$subjectCount ; $i++) { 
 	    			$assign_subject = new AssignSubject();
+					$assign_subject->group_id = $request->group_id;
 	    			$assign_subject->class_id = $request->class_id;
 	    			$assign_subject->subject_id = $request->subject_id[$i];
+	    			
 	    			$assign_subject->full_mark = $request->full_mark[$i];
 	    			$assign_subject->pass_mark = $request->pass_mark[$i];
 	    			$assign_subject->subjective_mark = $request->subjective_mark[$i];
@@ -56,6 +60,7 @@ class AssignSubjectController extends Controller
 	    	// dd($data['editData']->toArray());
 	    $data['subjects'] = SchoolSubject::all();
     	$data['classes'] = StudentClass::all();
+		$data['groups'] = StudentGroup::all();
     	return view('backend.setup.assign_subject.edit_assign_subject',$data);
 
 	    }
@@ -78,6 +83,7 @@ public function UpdateAssignSubject(Request $request,$class_id){
     		for ($i=0; $i <$countClass ; $i++) { 
     			$assign_subject = new AssignSubject();
 	    			$assign_subject->class_id = $request->class_id;
+					$assign_subject->group_id = $request->group_id;
 	    			$assign_subject->subject_id = $request->subject_id[$i];
 	    			$assign_subject->full_mark = $request->full_mark[$i];
 	    			$assign_subject->pass_mark = $request->pass_mark[$i];

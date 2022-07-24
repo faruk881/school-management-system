@@ -45,6 +45,8 @@ class StudentFeeController extends Controller
 		$html['thsource'] .= '<th>Original Fee </th>';
 		$html['thsource'] .= '<th>Discount Amount</th>';
 		$html['thsource'] .= '<th>Fee (This Student)</th>';
+		$html['thsource'] .= '<th>Payment Medium </th>';
+		$html['thsource'] .= '<th>Transaction number (If Any) </th>';
 		$html['thsource'] .= '<th>Select</th>';
 
 		foreach ($data as $key => $std) {
@@ -80,6 +82,9 @@ class StudentFeeController extends Controller
 				$finalfee = (int)$orginalfee;
 			}
 			$html[$key]['tdsource'] .='<td>'. '<input type="text" name="amount[]" value="'.$finalfee.' " class="form-control" readonly'.'</td>';
+
+			$html[$key]['tdsource'] .='<td>'. '<input type="text" name="medium[]" value="cash " class="form-control" readonly'.'</td>';
+			$html[$key]['tdsource'] .='<td>'. '<input type="text" name="trx_no[]" value="" class="form-control" readonly'.'</td>';
 			$html[$key]['tdsource'] .='<td>'.'<input type="hidden" name="student_id[]" value="'.$std->student_id.'">'.'<input type="checkbox" name="checkmanage[]" id="'.$key.'" value="'.$key.'" '.$checked.' style="transform: scale(1.5);margin-left: 10px;"> <label for="'.$key.'"> </label> '.'</td>'; 
 		}  
 
@@ -118,6 +123,8 @@ class StudentFeeController extends Controller
     			$data->fee_category_id = $request->fee_category_id;
     			$data->student_id = $request->student_id[$checkdata[$i]];
     			$data->amount = $request->amount[$checkdata[$i]];
+				$data->medium = $request->medium[$checkdata[$i]];
+				$data->trx_no = $request->trx_no[$checkdata[$i]];
     			$data->save();
 
 				$data2 = User::find($request->student_id[$checkdata[$i]]);

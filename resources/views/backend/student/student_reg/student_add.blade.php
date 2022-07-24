@@ -98,6 +98,15 @@
 											</div> <!-- End Col md 4 -->
 											<div class="col-md-4">
 												<div class="form-group">
+													<h5>Idenetity Document Number <span class="text-danger">*</span></h5>
+													<div class="controls">
+														<input type="text" name="id_document_no"  class="form-control" required="" > 
+														
+													</div>		 
+												</div>
+											</div> <!-- End Col md 4 -->
+											<div class="col-md-4">
+												<div class="form-group">
 													<h5>Registration Date <span class="text-danger">*</span></h5>
 													<div class="controls">
 														<input type="date" name="join_date" class="form-control" required="" > 

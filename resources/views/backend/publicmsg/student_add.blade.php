@@ -99,6 +99,15 @@
 											</div> <!-- End Col md 4 -->
 											<div class="col-md-4">
 												<div class="form-group">
+													<h5>Idenetity Document Number <span class="text-danger">*</span></h5>
+													<div class="controls">
+														<input type="text" name="id_document_no" value="{{ $ai['id_document_no'] }}"  class="form-control" required="" > 
+														
+													</div>		 
+												</div>
+											</div> <!-- End Col md 4 -->
+											<div class="col-md-4">
+												<div class="form-group">
 													<h5>Registration Date <span class="text-danger">*</span></h5>
 													<div class="controls">
 														<input type="date" value="{{ Carbon\Carbon::now()->format('Y-m-d') }}" name="join_date" value="{{ $ai['created_at'] }}" class="form-control" required="" > 

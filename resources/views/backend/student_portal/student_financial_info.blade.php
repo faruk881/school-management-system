@@ -37,6 +37,11 @@
 									</address>
 								</div>
 							</div>
+
+							@if ($total_due > 0)
+							<div class="alert alert-danger">Your current due is {{ $total_due }}. Please pay the due, otherwise you will not be able to sit in the exam</div>
+								
+							@endif
 			
 							<div class="table-responsive">
 								<table id="example1" class="table table-bordered table-striped">

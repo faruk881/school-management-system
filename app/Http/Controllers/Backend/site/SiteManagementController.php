@@ -234,6 +234,7 @@ class SiteManagementController extends Controller
         $af->fname = $request->fname;
         $af->mname = $request->mname;
         $af->religion = $request->religion;
+        $af->id_document_no = $request->id_document_no;
         $af->dob = $request->dob;
 
         $file = $request->file('profile_photo');

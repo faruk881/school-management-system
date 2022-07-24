@@ -272,6 +272,7 @@ Route::group(['middleware' => 'auth'],function(){
         Route::get('school/details/galleryimage/add',[SchoolDetailsController::class,'GalleryImageAdd'])->name('gallery.image.add');
         Route::get('school/details/galleryimage/view',[SchoolDetailsController::class,'GalleryView'])->name('gallery.image.view');
         Route::post('school/details/galleryimage/store',[SchoolDetailsController::class,'GalleryImageStore'])->name('gallery.image.store');
+        Route::post('school/details/galleryimage/update',[SchoolDetailsController::class,'GalleryImageUpdate'])->name('gallery.image.update');
         Route::get('school/details/galleryimage/delete/{id}',[SchoolDetailsController::class,'GalleryImageDelete'])->name('gallery.image.delete');
         Route::get('school/details/galleryimage/edit/{id}',[SchoolDetailsController::class,'GalleryImageEdit'])->name('gallery.image.edit');
         Route::post('school/details/sliderimage/store',[SchoolDetailsController::class,'SliderImageStore'])->name('school.details.sliderimage.store');

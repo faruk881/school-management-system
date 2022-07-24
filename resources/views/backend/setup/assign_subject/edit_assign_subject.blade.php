@@ -39,6 +39,17 @@
 		</select>
 	 </div>
           </div> <!-- // end form group -->
+ 	<div class="form-group">
+	<h5>Group <span class="text-danger">*</span></h5>
+	<div class="controls">
+	 <select name="group_id" required="" class="form-control">
+		<option value="" selected="" disabled="">Select Group</option>
+		@foreach($groups as $group)
+		<option value="{{ $group->id }}" {{ ($editData['0']->group_id == $group->id)? "selected":"" }} >{{ $group->name }}</option>
+		@endforeach	 
+		</select>
+	 </div>
+          </div> <!-- // end form group -->
 
 
 @foreach($editData as $edit)
